@@ -1,0 +1,58 @@
+{
+  "completed_frames": 3750,
+  "requested_frames": 3750,
+  "simulation_seconds": 125.0,
+  "wall_seconds": 162.99470959999599,
+  "approximate_fps": 23.006881690840427,
+  "events": 20,
+  "detected_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "loop_length_m": 36.68495559215387,
+  "prims": 260,
+  "motion": "kinematic encoder-driven animation",
+  "completed": true,
+  "completed_inspections": 20,
+  "pending_inspections": 0,
+  "exactly_24_channels": true,
+  "synchronized_healthy_records": true,
+  "history_storage": "per-splice JSON",
+  "station_state_transitions": {
+    "READY": 21,
+    "SCANNING": 20,
+    "COMPLETE": 20
+  },
+  "all_five_detected": true,
+  "baselines_loaded": 5,
+  "baselines_created": 0,
+  "baselines_preserved": 20,
+  "baselines_stored": 5,
+  "baseline_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "pending_baselines": 0,
+  "history_loaded": 0,
+  "history_appended": 20,
+  "history_counts": {
+    "S01": 4,
+    "S02": 4,
+    "S03": 4,
+    "S04": 4,
+    "S05": 4
+  },
+  "history_run": 1,
+  "timestamp_offset_s": 0.0,
+  "history_ui_checks": [
+    "history_latest",
+    "history_previous",
+    "history_baseline"
+  ]
+}

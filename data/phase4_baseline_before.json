@@ -1,0 +1,22 @@
+{
+  "S01.json": {
+    "sha256": "914e1c722ee1fb6e068c4a788f7f48a20db1a400856a0f6eede43b32f18acf8a",
+    "mtime_ns": 1791102360292954100
+  },
+  "S02.json": {
+    "sha256": "6eb28164f1c5c522e1efc12105e197a1a50f9aa269f07a28efb571e8b78a9eb8",
+    "mtime_ns": 1791102353156869400
+  },
+  "S03.json": {
+    "sha256": "ad92d8e84efee40572383bb83852a703a42b2ec99c95ce3a0c72fe46c39e82b4",
+    "mtime_ns": 1791102381769195800
+  },
+  "S04.json": {
+    "sha256": "9c0bd3f8ca4b3bef32e27502798d18dc515f5625229b9132663e55bd192b3e97",
+    "mtime_ns": 1791102374618634700
+  },
+  "S05.json": {
+    "sha256": "933b50f7a1c1a6b427fdd6dfb2832e19fd6bb7b487048740bbf4429ee196f8eb",
+    "mtime_ns": 1791102367519069900
+  }
+}

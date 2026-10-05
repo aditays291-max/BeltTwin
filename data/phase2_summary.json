@@ -1,0 +1,30 @@
+{
+  "completed_frames": 1080,
+  "requested_frames": 1080,
+  "simulation_seconds": 36.0,
+  "wall_seconds": 42.82256950001465,
+  "approximate_fps": 25.22034554698149,
+  "events": 5,
+  "detected_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "loop_length_m": 36.68495559215387,
+  "prims": 260,
+  "motion": "kinematic encoder-driven animation",
+  "completed": true,
+  "completed_inspections": 5,
+  "pending_inspections": 0,
+  "exactly_24_channels": true,
+  "synchronized_healthy_records": true,
+  "history_storage": "memory only",
+  "station_state_transitions": {
+    "READY": 6,
+    "SCANNING": 5,
+    "COMPLETE": 5
+  },
+  "all_five_detected": true
+}

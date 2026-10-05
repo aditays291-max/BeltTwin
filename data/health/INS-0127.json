@@ -1,0 +1,55 @@
+{
+  "health_version": "phase7_fusion_v1",
+  "inspection_id": "INS-0127",
+  "splice_id": "S01",
+  "baseline_source": "INS-0002",
+  "health_score": 91.90686246420717,
+  "health_state": "HEALTHY",
+  "current_anomaly_score": 0.08050913457270736,
+  "current_anomaly_severity": "NORMAL",
+  "mfl_evidence": {
+    "deviation": 0.16101826914541473,
+    "anomaly_contribution": 0.08050913457270736
+  },
+  "camera_evidence": {
+    "deviation": 0.0,
+    "anomaly_contribution": 0.0
+  },
+  "profile_evidence": {
+    "deviation": 0.0,
+    "anomaly_contribution": 0.0
+  },
+  "tension_evidence": {
+    "deviation": 0.0,
+    "anomaly_contribution": 0.0
+  },
+  "affected_channels": [],
+  "trend_score": 0.08191660385677757,
+  "trend_direction": "STABLE",
+  "trend_median_delta": -0.0028149385681404265,
+  "trend_window_mean": 0.08191660385677757,
+  "trend_deterioration_penalty": 0.0,
+  "trend_observation_count": 2,
+  "trend_source_inspections": [
+    "INS-0122",
+    "INS-0127"
+  ],
+  "trend_scope": "same splice / same demonstration run / original baseline",
+  "current_condition_component": 0.9194908654272926,
+  "historical_trend_health": 0.9180833961432224,
+  "fusion_weights": {
+    "current": 0.7,
+    "history": 0.3
+  },
+  "health_point_contributions": {
+    "current": 64.36436057991048,
+    "history": 27.542501884296673
+  },
+  "data_confidence": 0.7749999999999999,
+  "confidence_basis": "Evidence completeness rubric; not statistical probability",
+  "explanation": "Current anomaly 0.081 (NORMAL); MFL has the largest weighted sensor contribution (0.081). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.082; 70% current condition plus 30% historical condition gives health 91.91/100.",
+  "timestamp_s": 741.5825932025645,
+  "inspection_sequence": 25,
+  "run_sequence": 11,
+  "simulation_time_s": 42.40412966012823
+}

@@ -1,0 +1,3970 @@
+{
+  "completed_frames": 5610,
+  "requested_frames": 5610,
+  "simulation_seconds": 187.0,
+  "wall_seconds": 271.8329999000416,
+  "approximate_fps": 20.637670930545255,
+  "events": 30,
+  "detected_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "loop_length_m": 36.68495559215387,
+  "prims": 260,
+  "motion": "kinematic encoder-driven animation",
+  "completed": true,
+  "completed_inspections": 30,
+  "pending_inspections": 0,
+  "exactly_24_channels": true,
+  "synchronized_healthy_records": false,
+  "history_storage": "per-splice JSON",
+  "station_state_transitions": {
+    "READY": 31,
+    "SCANNING": 30,
+    "COMPLETE": 30
+  },
+  "all_five_detected": true,
+  "baselines_loaded": 5,
+  "baselines_created": 0,
+  "baselines_preserved": 0,
+  "baselines_stored": 5,
+  "baseline_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "pending_baselines": 0,
+  "history_loaded": 85,
+  "history_appended": 30,
+  "history_counts": {
+    "S01": 23,
+    "S02": 23,
+    "S03": 23,
+    "S04": 23,
+    "S05": 23
+  },
+  "history_run": 10,
+  "timestamp_offset_s": 516.1486707790515,
+  "history_ui_checks": [],
+  "scenario": "progressive",
+  "degradation_level": null,
+  "comparison_count": 30,
+  "baselines_read_only": true,
+  "anomaly_results": [
+    {
+      "inspection_id": "INS-0091",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.03489403700980925,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0697880740196185,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.005000000000000001,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0905644592293792,
+        0.07481411849383496,
+        0.05709498516634771,
+        0.0354382666549745,
+        0.007875170367772119,
+        0.01771913332748718,
+        0.04134464443080354,
+        0.06300136294217674,
+        0.080720496269664,
+        0.09253325182132215,
+        0.09843962959715125,
+        0.09647083700520824,
+        0.09056445922937913,
+        0.07481411849383489,
+        0.05709498516634771,
+        0.03543826665497443,
+        0.007875170367772119,
+        0.01771913332748718,
+        0.04134464443080354,
+        0.06300136294217681,
+        0.080720496269664,
+        0.09253325182132215,
+        0.09843962959715125,
+        0.09647083700520824
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.03489403700980925,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 5.719174067974355,
+      "timestamp_s": 521.8678448470258,
+      "inspection_sequence": 18,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0092",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.03511090121172895,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0702218024234579,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0051,
+      "mfl_max_channel_index": 12,
+      "mfl_channel_deviations": [
+        0.09647083700520817,
+        0.08859566663743612,
+        0.07481411849383489,
+        0.05512619257440463,
+        0.03346947406303142,
+        0.005906377775829107,
+        0.019687925919430263,
+        0.04331343702274648,
+        0.06693894812606291,
+        0.08268928886160701,
+        0.09253325182132215,
+        0.10040842218909427,
+        0.09647083700520824,
+        0.08859566663743612,
+        0.07481411849383496,
+        0.055126192574404695,
+        0.03346947406303142,
+        0.005906377775829107,
+        0.019687925919430263,
+        0.04331343702274655,
+        0.06693894812606284,
+        0.08268928886160708,
+        0.09253325182132222,
+        0.10040842218909427
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.03511090121172895,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 11.833333333333334,
+      "timestamp_s": 527.9820041123849,
+      "inspection_sequence": 18,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0093",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.03512168806904517,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.07024337613809034,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.005000000000000001,
+      "mfl_max_channel_index": 6,
+      "mfl_channel_deviations": [
+        0.023626579561170424,
+        0.04725315912234085,
+        0.06891085705341382,
+        0.08466191009419408,
+        0.09647519987477922,
+        0.09844408150487681,
+        0.09647519987477929,
+        0.08663079172429153,
+        0.07284862031360886,
+        0.0511909223825359,
+        0.02756434282136554,
+        0.001968881630097524,
+        0.023626579561170424,
+        0.04725315912234085,
+        0.06891085705341375,
+        0.08466191009419408,
+        0.09647519987477929,
+        0.09844408150487674,
+        0.09647519987477922,
+        0.0866307917242916,
+        0.07284862031360886,
+        0.0511909223825359,
+        0.02756434282136554,
+        0.0019688816300974556
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.03512168806904517,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 17.94749259869231,
+      "timestamp_s": 534.0961633777438,
+      "inspection_sequence": 18,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0094",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.034977478162747655,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.06995495632549531,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.005000000000000001,
+      "mfl_max_channel_index": 7,
+      "mfl_channel_deviations": [
+        0.001968740446633314,
+        0.025593625806232402,
+        0.04921851116583142,
+        0.06890591563216401,
+        0.08465583920523012,
+        0.09449954143839641,
+        0.0984370223316629,
+        0.09646828188502966,
+        0.08662457965186329,
+        0.07087465607879732,
+        0.051187251612464735,
+        0.025593625806232333,
+        0.0019687404466332457,
+        0.025593625806232333,
+        0.04921851116583142,
+        0.06890591563216401,
+        0.08465583920523005,
+        0.09449954143839641,
+        0.0984370223316629,
+        0.09646828188502966,
+        0.08662457965186336,
+        0.07087465607879725,
+        0.051187251612464665,
+        0.025593625806232402
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.034977478162747655,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 24.06165186405129,
+      "timestamp_s": 540.2103226431028,
+      "inspection_sequence": 18,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0095",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.0,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0,
+      "mfl_max_channel_index": 1,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.0,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 30.17581112941027,
+      "timestamp_s": 546.3244819084617,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 0,
+        "stage": "HEALTHY"
+      }
+    },
+    {
+      "inspection_id": "INS-0096",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.00888686893698103,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.01777373787396206,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.001299999999999999,
+      "mfl_max_channel_index": 10,
+      "mfl_channel_deviations": [
+        0.019687925919430332,
+        0.011812755551658213,
+        0.007875170367772119,
+        0.001968792591943081,
+        0.005906377775829038,
+        0.011812755551658144,
+        0.01771913332748725,
+        0.02165671851137321,
+        0.023625511103316288,
+        0.0255943036952593,
+        0.023625511103316288,
+        0.021656718511373275,
+        0.019687925919430263,
+        0.011812755551658144,
+        0.007875170367772119,
+        0.001968792591943013,
+        0.005906377775829038,
+        0.011812755551658144,
+        0.01771913332748725,
+        0.021656718511373275,
+        0.023625511103316288,
+        0.0255943036952593,
+        0.023625511103316288,
+        0.021656718511373275
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.00888686893698103,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 36.28997039476925,
+      "timestamp_s": 552.4386411738208,
+      "inspection_sequence": 19,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0097",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.009208184180836791,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.018416368361673582,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0013000000000000025,
+      "mfl_max_channel_index": 12,
+      "mfl_channel_deviations": [
+        0.021656718511373275,
+        0.01771913332748718,
+        0.013781548143601158,
+        0.005906377775829038,
+        0.0,
+        0.005906377775829038,
+        0.013781548143601158,
+        0.01771913332748718,
+        0.023625511103316288,
+        0.0255943036952593,
+        0.0255943036952593,
+        0.02559430369525937,
+        0.021656718511373275,
+        0.01771913332748725,
+        0.013781548143601158,
+        0.005906377775829038,
+        0.0,
+        0.005906377775829038,
+        0.013781548143601158,
+        0.01771913332748725,
+        0.023625511103316288,
+        0.02559430369525937,
+        0.02559430369525937,
+        0.0255943036952593
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.009208184180836791,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 42.40412966012823,
+      "timestamp_s": 558.5528004391797,
+      "inspection_sequence": 19,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0098",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.008941627746811278,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.017883255493622557,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0013000000000000025,
+      "mfl_max_channel_index": 17,
+      "mfl_channel_deviations": [
+        0.013782171410682735,
+        0.017719934670877853,
+        0.023626579561170494,
+        0.023626579561170424,
+        0.02559546119126795,
+        0.023626579561170424,
+        0.0216576979310729,
+        0.017719934670877784,
+        0.011813289780585212,
+        0.003937763260195048,
+        0.001968881630097524,
+        0.007875526520390164,
+        0.013782171410682735,
+        0.017719934670877853,
+        0.023626579561170424,
+        0.023626579561170424,
+        0.025595461191268015,
+        0.023626579561170424,
+        0.0216576979310729,
+        0.017719934670877853,
+        0.011813289780585212,
+        0.003937763260195048,
+        0.001968881630097524,
+        0.007875526520390232
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.008941627746811278,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 48.518288925487205,
+      "timestamp_s": 564.6669597045387,
+      "inspection_sequence": 19,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0099",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.00892742933780141,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.01785485867560282,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0013000000000000025,
+      "mfl_max_channel_index": 6,
+      "mfl_channel_deviations": [
+        0.007874961786532983,
+        0.015749923573066104,
+        0.01771866401969928,
+        0.02165614491296584,
+        0.023624885359599085,
+        0.025593625806232402,
+        0.023624885359599085,
+        0.02165614491296584,
+        0.01771866401969928,
+        0.011812442679799542,
+        0.005906221339899806,
+        0.0019687404466332457,
+        0.007874961786533052,
+        0.015749923573066035,
+        0.01771866401969928,
+        0.02165614491296584,
+        0.023624885359599085,
+        0.025593625806232333,
+        0.023624885359599085,
+        0.02165614491296584,
+        0.01771866401969935,
+        0.011812442679799542,
+        0.005906221339899737,
+        0.0019687404466331776
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.00892742933780141,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 54.63244819084618,
+      "timestamp_s": 570.7811189698976,
+      "inspection_sequence": 19,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0100",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.12613875538830227,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.12727751077660468,
+      "camera_deviation": 0.12499999999999956,
+      "profile_deviation": 0.15,
+      "tension_deviation": 0.07500000000000007,
+      "mfl_max_channel_deviation": 0.02,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.17226133946370506,
+        0.29530515336635144,
+        0.3937402044884685,
+        0.2953051533663513,
+        0.172261339463705,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [
+        "MFL11"
+      ],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.06363875538830234,
+        "camera": 0.02499999999999991,
+        "profile": 0.03,
+        "tension": 0.007500000000000007
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 60.74660745620516,
+      "timestamp_s": 576.8952782352567,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 1,
+        "stage": "EARLY"
+      }
+    },
+    {
+      "inspection_id": "INS-0101",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.01817137969468112,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.03634275938936224,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0026000000000000016,
+      "mfl_max_channel_index": 8,
+      "mfl_channel_deviations": [
+        0.023625511103316288,
+        0.011812755551658076,
+        0.001968792591943013,
+        0.015750340735544238,
+        0.0255943036952593,
+        0.037407059246917514,
+        0.04528222961468956,
+        0.05118860739051867,
+        0.05118860739051867,
+        0.04921981479857559,
+        0.04331343702274655,
+        0.03543826665497443,
+        0.023625511103316288,
+        0.011812755551658144,
+        0.001968792591943013,
+        0.01575034073554417,
+        0.02559430369525937,
+        0.037407059246917514,
+        0.04528222961468956,
+        0.0511886073905186,
+        0.05118860739051867,
+        0.04921981479857559,
+        0.04331343702274655,
+        0.0354382666549745
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.01817137969468112,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 66.86076672156415,
+      "timestamp_s": 583.0094375006156,
+      "inspection_sequence": 20,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0102",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.017789632628351305,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.03557926525670261,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0025000000000000022,
+      "mfl_max_channel_index": 10,
+      "mfl_channel_deviations": [
+        0.03346947406303142,
+        0.021656718511373275,
+        0.009843962959715132,
+        0.001968792591943013,
+        0.01771913332748725,
+        0.027563096287202382,
+        0.037407059246917444,
+        0.04528222961468956,
+        0.04921981479857559,
+        0.04921981479857566,
+        0.04921981479857566,
+        0.04134464443080347,
+        0.03346947406303142,
+        0.021656718511373275,
+        0.009843962959715132,
+        0.001968792591943013,
+        0.01771913332748718,
+        0.027563096287202382,
+        0.037407059246917514,
+        0.04528222961468956,
+        0.04921981479857559,
+        0.04921981479857559,
+        0.04921981479857559,
+        0.04134464443080354
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.017789632628351305,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 72.97492598692313,
+      "timestamp_s": 589.1235967659746,
+      "inspection_sequence": 20,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0103",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.018040622182742532,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.036081244365485064,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.002599999999999998,
+      "mfl_max_channel_index": 4,
+      "mfl_channel_deviations": [
+        0.039377632601950686,
+        0.04725315912234085,
+        0.04922204075243837,
+        0.0511909223825359,
+        0.04725315912234092,
+        0.04134651423204828,
+        0.033470987711658115,
+        0.0216576979310729,
+        0.007875526520390096,
+        0.003937763260195048,
+        0.017719934670877853,
+        0.029533224451462996,
+        0.039377632601950686,
+        0.04725315912234085,
+        0.04922204075243837,
+        0.0511909223825359,
+        0.04725315912234085,
+        0.04134651423204828,
+        0.033470987711658115,
+        0.02165769793107283,
+        0.007875526520390164,
+        0.003937763260195048,
+        0.017719934670877853,
+        0.029533224451462996
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.018040622182742532,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 79.0890852522821,
+      "timestamp_s": 595.2377560313336,
+      "inspection_sequence": 20,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0104",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.0181130362460589,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0362260724921178,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0026000000000000016,
+      "mfl_max_channel_index": 4,
+      "mfl_channel_deviations": [
+        0.03149984714613214,
+        0.03937480893266512,
+        0.04724977071919817,
+        0.051187251612464735,
+        0.051187251612464665,
+        0.04724977071919817,
+        0.041343549379298364,
+        0.03149984714613207,
+        0.019687404466332596,
+        0.007874961786532983,
+        0.005906221339899806,
+        0.01771866401969928,
+        0.03149984714613207,
+        0.03937480893266519,
+        0.04724977071919824,
+        0.051187251612464735,
+        0.051187251612464735,
+        0.04724977071919817,
+        0.04134354937929843,
+        0.03149984714613214,
+        0.019687404466332527,
+        0.007874961786533052,
+        0.005906221339899737,
+        0.017718664019699418
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.0181130362460589,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 85.20324451764108,
+      "timestamp_s": 601.3519152966926,
+      "inspection_sequence": 20,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0105",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.27750526185426505,
+      "severity": "WATCH",
+      "mfl_deviation": 0.2800105237085303,
+      "camera_deviation": 0.2749999999999997,
+      "profile_deviation": 0.33,
+      "tension_deviation": 0.1649999999999996,
+      "mfl_max_channel_deviation": 0.044,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.378974946820151,
+        0.6496713374059732,
+        0.8662284498746308,
+        0.6496713374059732,
+        0.378974946820151,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.14000526185426515,
+        "camera": 0.05499999999999994,
+        "profile": 0.066,
+        "tension": 0.01649999999999996
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 91.31740378300006,
+      "timestamp_s": 607.4660745620515,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 2,
+        "stage": "DEVELOPING"
+      }
+    },
+    {
+      "inspection_id": "INS-0106",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.043148123304814476,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.08629624660962895,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.006200000000000001,
+      "mfl_max_channel_index": 8,
+      "mfl_channel_deviations": [
+        0.019687925919430128,
+        0.011812755551658213,
+        0.04331343702274655,
+        0.07284532590189195,
+        0.09450204441326515,
+        0.11025238514880939,
+        0.12009634810852446,
+        0.12206514070046753,
+        0.11418997033269541,
+        0.09843962959715125,
+        0.07678291108577798,
+        0.0511886073905186,
+        0.019687925919430263,
+        0.011812755551658144,
+        0.04331343702274655,
+        0.07284532590189188,
+        0.09450204441326522,
+        0.11025238514880939,
+        0.12009634810852446,
+        0.12206514070046748,
+        0.11418997033269541,
+        0.09843962959715125,
+        0.07678291108577798,
+        0.0511886073905186
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.043148123304814476,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 97.43156304835904,
+      "timestamp_s": 613.5802338274106,
+      "inspection_sequence": 21,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0107",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.043061009221849134,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.08612201844369827,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.006100000000000001,
+      "mfl_max_channel_index": 8,
+      "mfl_channel_deviations": [
+        0.047251022206632576,
+        0.01575034073554417,
+        0.01575034073554417,
+        0.04528222961468956,
+        0.07481411849383496,
+        0.09647083700520824,
+        0.11222117774075241,
+        0.12009634810852453,
+        0.12009634810852446,
+        0.11222117774075241,
+        0.09843962959715125,
+        0.07481411849383489,
+        0.047251022206632576,
+        0.01575034073554417,
+        0.01575034073554417,
+        0.04528222961468956,
+        0.07481411849383489,
+        0.09647083700520824,
+        0.11222117774075241,
+        0.12009634810852446,
+        0.12009634810852453,
+        0.11222117774075241,
+        0.09843962959715118,
+        0.07481411849383489
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.043061009221849134,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 103.54572231371802,
+      "timestamp_s": 619.6943930927695,
+      "inspection_sequence": 21,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0108",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.04313977955947965,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0862795591189593,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.006200000000000001,
+      "mfl_max_channel_index": 14,
+      "mfl_channel_deviations": [
+        0.11419513454565706,
+        0.12207066106604716,
+        0.12010177943594964,
+        0.11222625291555954,
+        0.09450631824468177,
+        0.07087973868351127,
+        0.0433153958621458,
+        0.011813289780585212,
+        0.019688816300975374,
+        0.04922204075243837,
+        0.0767863835738039,
+        0.09844408150487674,
+        0.11419513454565706,
+        0.12207066106604723,
+        0.12010177943594964,
+        0.11222625291555947,
+        0.0945063182446817,
+        0.07087973868351127,
+        0.0433153958621458,
+        0.011813289780585212,
+        0.019688816300975374,
+        0.04922204075243837,
+        0.0767863835738039,
+        0.09844408150487674
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.04313977955947965,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 109.65988157907698,
+      "timestamp_s": 625.8085523581285,
+      "inspection_sequence": 21,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0109",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.04320682635529138,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.08641365271058277,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.006200000000000001,
+      "mfl_max_channel_index": 3,
+      "mfl_channel_deviations": [
+        0.1023745032249294,
+        0.11418694590472894,
+        0.12206190769126199,
+        0.12009316724462875,
+        0.11024946501146245,
+        0.0925308009917631,
+        0.06890591563216401,
+        0.041343549379298364,
+        0.009843702233166298,
+        0.02165614491296584,
+        0.053155992059097976,
+        0.07874961786533032,
+        0.1023745032249294,
+        0.11418694590472894,
+        0.12206190769126199,
+        0.12009316724462875,
+        0.11024946501146245,
+        0.09253080099176303,
+        0.06890591563216401,
+        0.041343549379298364,
+        0.009843702233166298,
+        0.02165614491296584,
+        0.053155992059097976,
+        0.07874961786533038
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.04320682635529138,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 115.77404084443596,
+      "timestamp_s": 631.9227116234874,
+      "inspection_sequence": 21,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0110",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.45409951939788834,
+      "severity": "WARNING",
+      "mfl_deviation": 0.45819903879577684,
+      "camera_deviation": 0.44999999999999984,
+      "profile_deviation": 0.5399999999999999,
+      "tension_deviation": 0.2699999999999997,
+      "mfl_max_channel_deviation": 0.07200000000000001,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.620140822069338,
+        1.0,
+        1.0,
+        1.0,
+        0.620140822069338,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.22909951939788842,
+        "camera": 0.08999999999999997,
+        "profile": 0.10799999999999998,
+        "tension": 0.02699999999999997
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 121.88820010979494,
+      "timestamp_s": 638.0368708888465,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 3,
+        "stage": "MODERATE"
+      }
+    },
+    {
+      "inspection_id": "INS-0111",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.06378414518112875,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.1275682903622575,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0091,
+      "mfl_max_channel_index": 6,
+      "mfl_channel_deviations": [
+        0.029531888879145464,
+        0.07284532590189195,
+        0.11418997033269541,
+        0.14765944439572684,
+        0.16734737031515712,
+        0.17916012586681526,
+        0.17916012586681518,
+        0.1653785777232141,
+        0.13978427402795474,
+        0.10434600737298029,
+        0.06300136294217674,
+        0.01771913332748718,
+        0.029531888879145395,
+        0.07284532590189188,
+        0.11418997033269541,
+        0.14765944439572684,
+        0.16734737031515712,
+        0.17916012586681526,
+        0.17916012586681526,
+        0.16537857772321402,
+        0.1397842740279548,
+        0.10434600737298029,
+        0.06300136294217681,
+        0.01771913332748725
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.06378414518112875,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 128.00235937515393,
+      "timestamp_s": 644.1510301542054,
+      "inspection_sequence": 22,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0112",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.06376641821781867,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.12753283643563734,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0091,
+      "mfl_max_channel_index": 7,
+      "mfl_channel_deviations": [
+        0.013781548143601158,
+        0.03346947406303142,
+        0.07875170367772098,
+        0.11812755551658144,
+        0.14962823698766992,
+        0.17128495549904313,
+        0.17916012586681526,
+        0.17719133327487224,
+        0.161440992539328,
+        0.1358466888440687,
+        0.10237721478103734,
+        0.05906377775829072,
+        0.013781548143601158,
+        0.03346947406303142,
+        0.07875170367772098,
+        0.11812755551658144,
+        0.14962823698766986,
+        0.17128495549904313,
+        0.17916012586681526,
+        0.17719133327487216,
+        0.161440992539328,
+        0.1358466888440687,
+        0.10237721478103727,
+        0.05906377775829079
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.06376641821781867,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 134.1165186405129,
+      "timestamp_s": 650.2651894195644,
+      "inspection_sequence": 22,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0113",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.0634983403730217,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.1269966807460434,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0091,
+      "mfl_max_channel_index": 1,
+      "mfl_channel_deviations": [
+        0.17916822833887577,
+        0.17523046507868065,
+        0.1594794120379004,
+        0.13191506921653484,
+        0.09450631824468177,
+        0.05315980401263349,
+        0.005906644890292571,
+        0.04134651423204821,
+        0.08466191009419408,
+        0.12207066106604723,
+        0.1516038855175103,
+        0.1712927018184856,
+        0.17916822833887577,
+        0.17523046507868065,
+        0.1594794120379004,
+        0.13191506921653484,
+        0.0945063182446817,
+        0.05315980401263349,
+        0.00590664489029264,
+        0.04134651423204828,
+        0.08466191009419408,
+        0.12207066106604716,
+        0.1516038855175103,
+        0.1712927018184856
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.0634983403730217,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 140.2306779058719,
+      "timestamp_s": 656.3793486849233,
+      "inspection_sequence": 22,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0114",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.06371278763013173,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.12742557526026346,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.0091,
+      "mfl_max_channel_index": 2,
+      "mfl_channel_deviations": [
+        0.17324915930372672,
+        0.17915538064362646,
+        0.17521789975035998,
+        0.15749923573066063,
+        0.12993686947779498,
+        0.0925308009917631,
+        0.04921851116583142,
+        0.0019687404466332457,
+        0.04528103027256493,
+        0.0885933200984966,
+        0.12599938858452847,
+        0.15356175483739407,
+        0.17324915930372667,
+        0.17915538064362646,
+        0.17521789975035998,
+        0.15749923573066069,
+        0.12993686947779504,
+        0.09253080099176303,
+        0.04921851116583142,
+        0.0019687404466332457,
+        0.04528103027256493,
+        0.0885933200984966,
+        0.12599938858452847,
+        0.15356175483739412
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.06371278763013173,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 146.34483717123086,
+      "timestamp_s": 662.4935079502824,
+      "inspection_sequence": 22,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0115",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.6306937769415117,
+      "severity": "WARNING",
+      "mfl_deviation": 0.6363875538830234,
+      "camera_deviation": 0.625,
+      "profile_deviation": 0.7500000000000001,
+      "tension_deviation": 0.3749999999999998,
+      "mfl_max_channel_deviation": 0.1,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.8613066973185252,
+        1.0,
+        1.0,
+        1.0,
+        0.8613066973185248,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.3181937769415117,
+        "camera": 0.125,
+        "profile": 0.15000000000000002,
+        "tension": 0.03749999999999998
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 152.45899643658984,
+      "timestamp_s": 668.6076672156413,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 4,
+        "stage": "ADVANCED"
+      }
+    },
+    {
+      "inspection_id": "INS-0116",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "baseline_splice_id": "S02",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.07767535526414766,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.15535071052829533,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.011100000000000002,
+      "mfl_max_channel_index": 17,
+      "mfl_channel_deviations": [
+        0.10434600737298036,
+        0.14962823698766992,
+        0.18703529623458737,
+        0.21066080733790365,
+        0.2185359777056757,
+        0.21262959992984667,
+        0.19491046660235942,
+        0.16144099253932806,
+        0.11615876292463843,
+        0.06300136294217674,
+        0.007875170367772119,
+        0.04921981479857566,
+        0.10434600737298029,
+        0.14962823698766986,
+        0.18703529623458737,
+        0.2106608073379036,
+        0.2185359777056758,
+        0.21262959992984673,
+        0.19491046660235942,
+        0.161440992539328,
+        0.11615876292463843,
+        0.06300136294217681,
+        0.007875170367772119,
+        0.04921981479857559
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.07767535526414766,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 158.57315570194882,
+      "timestamp_s": 674.7218264810003,
+      "inspection_sequence": 23,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0117",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "baseline_splice_id": "S01",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.07762231643565921,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.15524463287131843,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.011200000000000002,
+      "mfl_max_channel_index": 6,
+      "mfl_channel_deviations": [
+        0.05315739998246168,
+        0.10828359255686631,
+        0.15356582217155587,
+        0.1890040888265303,
+        0.21262959992984667,
+        0.22050477029761878,
+        0.21262959992984667,
+        0.1909728814184734,
+        0.15553461476349897,
+        0.11025238514880939,
+        0.05906377775829079,
+        0.001968792591943013,
+        0.05315739998246168,
+        0.10828359255686638,
+        0.15356582217155595,
+        0.1890040888265303,
+        0.21262959992984667,
+        0.22050477029761878,
+        0.21262959992984667,
+        0.19097288141847332,
+        0.15553461476349897,
+        0.11025238514880932,
+        0.05906377775829072,
+        0.001968792591943013
+      ],
+      "mfl_normalization_scale": 0.05079255194743943,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.07762231643565921,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 164.6873149673078,
+      "timestamp_s": 680.8359857463593,
+      "inspection_sequence": 23,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0118",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "baseline_splice_id": "S05",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.07742685943071394,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.15485371886142787,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.011099999999999999,
+      "mfl_max_channel_index": 12,
+      "mfl_channel_deviations": [
+        0.21067033442043628,
+        0.18704375485926586,
+        0.14963500388741272,
+        0.10435072639516939,
+        0.04922204075243844,
+        0.005906644890292571,
+        0.06300421216312117,
+        0.11419513454565706,
+        0.1594794120379004,
+        0.1929503997495585,
+        0.21263921605053387,
+        0.21854586094082645,
+        0.21067033442043637,
+        0.18704375485926586,
+        0.14963500388741272,
+        0.10435072639516939,
+        0.04922204075243837,
+        0.005906644890292571,
+        0.06300421216312117,
+        0.11419513454565713,
+        0.1594794120379004,
+        0.1929503997495585,
+        0.21263921605053387,
+        0.21854586094082645
+      ],
+      "mfl_normalization_scale": 0.050790254970811084,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.07742685943071394,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 170.80147423266678,
+      "timestamp_s": 686.9501450117183,
+      "inspection_sequence": 23,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0119",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "baseline_splice_id": "S04",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.07777043929478718,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.15554087858957436,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "mfl_max_channel_deviation": 0.011200000000000002,
+      "mfl_max_channel_index": 1,
+      "mfl_channel_deviations": [
+        0.2204989300229249,
+        0.20868648734312528,
+        0.18506160198352628,
+        0.14765553349749433,
+        0.10040576277829615,
+        0.04724977071919817,
+        0.011812442679799542,
+        0.06693717518553077,
+        0.12009316724462868,
+        0.16340545707056042,
+        0.1949053042166925,
+        0.2145927086830251,
+        0.22049893002292484,
+        0.20868648734312537,
+        0.18506160198352628,
+        0.14765553349749438,
+        0.10040576277829615,
+        0.04724977071919817,
+        0.011812442679799542,
+        0.06693717518553077,
+        0.12009316724462875,
+        0.16340545707056042,
+        0.1949053042166925,
+        0.21459270868302516
+      ],
+      "mfl_normalization_scale": 0.05079389727122738,
+      "affected_channels": [],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.07777043929478718,
+        "camera": 0.0,
+        "profile": 0.0,
+        "tension": 0.0
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 176.91563349802576,
+      "timestamp_s": 693.0643042770772,
+      "inspection_sequence": 23,
+      "run_sequence": 10
+    },
+    {
+      "inspection_id": "INS-0120",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "baseline_splice_id": "S03",
+      "fingerprint_version": "1.0",
+      "anomaly_score": 0.8072880344851349,
+      "severity": "CRITICAL",
+      "mfl_deviation": 0.8145760689702699,
+      "camera_deviation": 0.7999999999999996,
+      "profile_deviation": 0.96,
+      "tension_deviation": 0.47999999999999987,
+      "mfl_max_channel_deviation": 0.12799999999999997,
+      "mfl_max_channel_index": 11,
+      "mfl_channel_deviations": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "mfl_normalization_scale": 0.05079491444360679,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "weights": {
+        "mfl": 0.5,
+        "camera": 0.2,
+        "profile": 0.2,
+        "tension": 0.1
+      },
+      "weighted_contributions": {
+        "mfl": 0.40728803448513495,
+        "camera": 0.15999999999999992,
+        "profile": 0.192,
+        "tension": 0.04799999999999999
+      },
+      "normalization": {
+        "camera_drop_span": 0.2,
+        "profile_increase_span_mm": 0.1,
+        "tension_drop_span": 0.2,
+        "mfl_scale_floor": 0.02
+      },
+      "simulation_time_s": 183.02979276338473,
+      "timestamp_s": 699.1784635424362,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 5,
+        "stage": "SEVERE"
+      }
+    }
+  ],
+  "degradation_trend": [
+    {
+      "inspection_id": "INS-0095",
+      "splice_id": "S03",
+      "inspection_sequence": 18,
+      "timestamp_s": 546.3244819084617,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.0,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "affected_channels": [],
+      "degradation_level": 0,
+      "stage": "HEALTHY"
+    },
+    {
+      "inspection_id": "INS-0100",
+      "splice_id": "S03",
+      "inspection_sequence": 19,
+      "timestamp_s": 576.8952782352567,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.12613875538830227,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.12727751077660468,
+      "camera_deviation": 0.12499999999999956,
+      "profile_deviation": 0.15,
+      "tension_deviation": 0.07500000000000007,
+      "affected_channels": [
+        "MFL11"
+      ],
+      "degradation_level": 1,
+      "stage": "EARLY"
+    },
+    {
+      "inspection_id": "INS-0105",
+      "splice_id": "S03",
+      "inspection_sequence": 20,
+      "timestamp_s": 607.4660745620515,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.27750526185426505,
+      "severity": "WATCH",
+      "mfl_deviation": 0.2800105237085303,
+      "camera_deviation": 0.2749999999999997,
+      "profile_deviation": 0.33,
+      "tension_deviation": 0.1649999999999996,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 2,
+      "stage": "DEVELOPING"
+    },
+    {
+      "inspection_id": "INS-0110",
+      "splice_id": "S03",
+      "inspection_sequence": 21,
+      "timestamp_s": 638.0368708888465,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.45409951939788834,
+      "severity": "WARNING",
+      "mfl_deviation": 0.45819903879577684,
+      "camera_deviation": 0.44999999999999984,
+      "profile_deviation": 0.5399999999999999,
+      "tension_deviation": 0.2699999999999997,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 3,
+      "stage": "MODERATE"
+    },
+    {
+      "inspection_id": "INS-0115",
+      "splice_id": "S03",
+      "inspection_sequence": 22,
+      "timestamp_s": 668.6076672156413,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.6306937769415117,
+      "severity": "WARNING",
+      "mfl_deviation": 0.6363875538830234,
+      "camera_deviation": 0.625,
+      "profile_deviation": 0.7500000000000001,
+      "tension_deviation": 0.3749999999999998,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 4,
+      "stage": "ADVANCED"
+    },
+    {
+      "inspection_id": "INS-0120",
+      "splice_id": "S03",
+      "inspection_sequence": 23,
+      "timestamp_s": 699.1784635424362,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.8072880344851349,
+      "severity": "CRITICAL",
+      "mfl_deviation": 0.8145760689702699,
+      "camera_deviation": 0.7999999999999996,
+      "profile_deviation": 0.96,
+      "tension_deviation": 0.47999999999999987,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 5,
+      "stage": "SEVERE"
+    }
+  ],
+  "six_levels_complete": true,
+  "health_results": [
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0091",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 96.51059629901907,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.03489403700980925,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.0697880740196185,
+        "anomaly_contribution": 0.03489403700980925
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.03489403700980925,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.0,
+      "trend_window_mean": 0.03489403700980925,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 1,
+      "trend_source_inspections": [
+        "INS-0091"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9651059629901908,
+      "historical_trend_health": 0.9651059629901908,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 67.55741740931336,
+        "history": 28.953178889705725
+      },
+      "data_confidence": 0.7,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.035 (NORMAL); MFL has the largest weighted sensor contribution (0.035). Only 1 observation(s): insufficient history to establish a direction. Historical degradation 0.035; 70% current condition plus 30% historical condition gives health 96.51/100.",
+      "timestamp_s": 521.8678448470258,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "simulation_time_s": 5.719174067974355
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0092",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 96.4889098788271,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.03511090121172895,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.0702218024234579,
+        "anomaly_contribution": 0.03511090121172895
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.03511090121172895,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.0,
+      "trend_window_mean": 0.03511090121172895,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 1,
+      "trend_source_inspections": [
+        "INS-0092"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.964889098788271,
+      "historical_trend_health": 0.964889098788271,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 67.54223691517898,
+        "history": 28.94667296364813
+      },
+      "data_confidence": 0.7,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.035 (NORMAL); MFL has the largest weighted sensor contribution (0.035). Only 1 observation(s): insufficient history to establish a direction. Historical degradation 0.035; 70% current condition plus 30% historical condition gives health 96.49/100.",
+      "timestamp_s": 527.9820041123849,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "simulation_time_s": 11.833333333333334
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0093",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 96.48783119309549,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.03512168806904517,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.07024337613809034,
+        "anomaly_contribution": 0.03512168806904517
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.03512168806904517,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.0,
+      "trend_window_mean": 0.03512168806904517,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 1,
+      "trend_source_inspections": [
+        "INS-0093"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9648783119309549,
+      "historical_trend_health": 0.9648783119309549,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 67.54148183516683,
+        "history": 28.946349357928646
+      },
+      "data_confidence": 0.7,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.035 (NORMAL); MFL has the largest weighted sensor contribution (0.035). Only 1 observation(s): insufficient history to establish a direction. Historical degradation 0.035; 70% current condition plus 30% historical condition gives health 96.49/100.",
+      "timestamp_s": 534.0961633777438,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "simulation_time_s": 17.94749259869231
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0094",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 96.50225218372523,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.034977478162747655,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.06995495632549531,
+        "anomaly_contribution": 0.034977478162747655
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.034977478162747655,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.0,
+      "trend_window_mean": 0.034977478162747655,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 1,
+      "trend_source_inspections": [
+        "INS-0094"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9650225218372523,
+      "historical_trend_health": 0.9650225218372523,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 67.55157652860767,
+        "history": 28.95067565511757
+      },
+      "data_confidence": 0.7,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.035 (NORMAL); MFL has the largest weighted sensor contribution (0.035). Only 1 observation(s): insufficient history to establish a direction. Historical degradation 0.035; 70% current condition plus 30% historical condition gives health 96.50/100.",
+      "timestamp_s": 540.2103226431028,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "simulation_time_s": 24.06165186405129
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0095",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 100.0,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.0,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.0,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.0,
+      "trend_window_mean": 0.0,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 1,
+      "trend_source_inspections": [
+        "INS-0095"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 1.0,
+      "historical_trend_health": 1.0,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 70.0,
+        "history": 30.0
+      },
+      "data_confidence": 0.7,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.000 (NORMAL); MFL has the largest weighted sensor contribution (0.000). Only 1 observation(s): insufficient history to establish a direction. Historical degradation 0.000; 70% current condition plus 30% historical condition gives health 100.00/100.",
+      "timestamp_s": 546.3244819084617,
+      "inspection_sequence": 18,
+      "run_sequence": 10,
+      "simulation_time_s": 30.17581112941027,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 0,
+        "stage": "HEALTHY"
+      }
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0096",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 98.72120558520947,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.00888686893698103,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.01777373787396206,
+        "anomaly_contribution": 0.00888686893698103
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02189045297339514,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.026007168072828223,
+      "trend_window_mean": 0.02189045297339514,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 2,
+      "trend_source_inspections": [
+        "INS-0091",
+        "INS-0096"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.991113131063019,
+      "historical_trend_health": 0.9781095470266049,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 69.37791917441133,
+        "history": 29.343286410798147
+      },
+      "data_confidence": 0.7749999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.009 (NORMAL); MFL has the largest weighted sensor contribution (0.009). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.022; 70% current condition plus 30% historical condition gives health 98.72/100.",
+      "timestamp_s": 552.4386411738208,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "simulation_time_s": 36.28997039476925
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0097",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 98.69064082645293,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.009208184180836791,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.018416368361673582,
+        "anomaly_contribution": 0.009208184180836791
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02215954269628287,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.025902717030892156,
+      "trend_window_mean": 0.02215954269628287,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 2,
+      "trend_source_inspections": [
+        "INS-0092",
+        "INS-0097"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9907918158191632,
+      "historical_trend_health": 0.9778404573037172,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 69.35542710734143,
+        "history": 29.335213719111515
+      },
+      "data_confidence": 0.7749999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.009 (NORMAL); MFL has the largest weighted sensor contribution (0.009). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.022; 70% current condition plus 30% historical condition gives health 98.69/100.",
+      "timestamp_s": 558.5528004391797,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "simulation_time_s": 42.40412966012823
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0098",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 98.71313632048535,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.008941627746811278,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.017883255493622557,
+        "anomaly_contribution": 0.008941627746811278
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.022031657907928225,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.02618006032223389,
+      "trend_window_mean": 0.022031657907928225,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 2,
+      "trend_source_inspections": [
+        "INS-0093",
+        "INS-0098"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9910583722531887,
+      "historical_trend_health": 0.9779683420920717,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 69.3740860577232,
+        "history": 29.33905026276215
+      },
+      "data_confidence": 0.7749999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.009 (NORMAL); MFL has the largest weighted sensor contribution (0.009). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.022; 70% current condition plus 30% historical condition gives health 98.71/100.",
+      "timestamp_s": 564.6669597045387,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "simulation_time_s": 48.518288925487205
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0099",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 98.71650633384566,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.00892742933780141,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.01785485867560282,
+        "anomaly_contribution": 0.00892742933780141
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.021952453750274534,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.026050048824946243,
+      "trend_window_mean": 0.021952453750274534,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 2,
+      "trend_source_inspections": [
+        "INS-0094",
+        "INS-0099"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9910725706621986,
+      "historical_trend_health": 0.9780475462497255,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 69.37507994635389,
+        "history": 29.341426387491765
+      },
+      "data_confidence": 0.7749999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.009 (NORMAL); MFL has the largest weighted sensor contribution (0.009). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.022; 70% current condition plus 30% historical condition gives health 98.72/100.",
+      "timestamp_s": 570.7811189698976,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "simulation_time_s": 54.63244819084618
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0100",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 89.27820579199431,
+      "health_state": "STABLE",
+      "current_anomaly_score": 0.12613875538830227,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.12727751077660468,
+        "anomaly_contribution": 0.06363875538830234
+      },
+      "camera_evidence": {
+        "deviation": 0.12499999999999956,
+        "anomaly_contribution": 0.02499999999999991
+      },
+      "profile_evidence": {
+        "deviation": 0.15,
+        "anomaly_contribution": 0.03
+      },
+      "tension_evidence": {
+        "deviation": 0.07500000000000007,
+        "anomaly_contribution": 0.007500000000000007
+      },
+      "affected_channels": [
+        "MFL11"
+      ],
+      "trend_score": 0.06306937769415114,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.12613875538830227,
+      "trend_window_mean": 0.06306937769415114,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 2,
+      "trend_source_inspections": [
+        "INS-0095",
+        "INS-0100"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.8738612446116978,
+      "historical_trend_health": 0.9369306223058489,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 61.17028712281885,
+        "history": 28.10791866917547
+      },
+      "data_confidence": 0.7749999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.126 (NORMAL); MFL has the largest weighted sensor contribution (0.064). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.063; 70% current condition plus 30% historical condition gives health 89.28/100.",
+      "timestamp_s": 576.8952782352567,
+      "inspection_sequence": 19,
+      "run_sequence": 10,
+      "simulation_time_s": 60.74660745620516,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 1,
+        "stage": "EARLY"
+      }
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0101",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 98.1084805649576,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.01817137969468112,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.03634275938936224,
+        "anomaly_contribution": 0.01817137969468112
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02065076188049047,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.008361328657564067,
+      "trend_window_mean": 0.02065076188049047,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 3,
+      "trend_source_inspections": [
+        "INS-0091",
+        "INS-0096",
+        "INS-0101"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9818286203053189,
+      "historical_trend_health": 0.9793492381195096,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 68.72800342137232,
+        "history": 29.38047714358529
+      },
+      "data_confidence": 0.85,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.018 (NORMAL); MFL has the largest weighted sensor contribution (0.018). No sustained directional change exceeds the trend threshold. Historical degradation 0.021; 70% current condition plus 30% historical condition gives health 98.11/100.",
+      "timestamp_s": 583.0094375006156,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "simulation_time_s": 66.86076672156415
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0102",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 98.13363853580623,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.017789632628351305,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.03557926525670261,
+        "anomaly_contribution": 0.017789632628351305
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.020702906006972346,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.008660634291688821,
+      "trend_window_mean": 0.020702906006972346,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 3,
+      "trend_source_inspections": [
+        "INS-0092",
+        "INS-0097",
+        "INS-0102"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9822103673716487,
+      "historical_trend_health": 0.9792970939930277,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 68.75472571601541,
+        "history": 29.37891281979083
+      },
+      "data_confidence": 0.85,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.018 (NORMAL); MFL has the largest weighted sensor contribution (0.018). No sustained directional change exceeds the trend threshold. Historical degradation 0.021; 70% current condition plus 30% historical condition gives health 98.13/100.",
+      "timestamp_s": 589.1235967659746,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "simulation_time_s": 72.97492598692313
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0103",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 98.11611706722204,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.018040622182742532,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.036081244365485064,
+        "anomaly_contribution": 0.018040622182742532
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02070131266619966,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.008540532943151317,
+      "trend_window_mean": 0.02070131266619966,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 3,
+      "trend_source_inspections": [
+        "INS-0093",
+        "INS-0098",
+        "INS-0103"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9819593778172575,
+      "historical_trend_health": 0.9792986873338003,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 68.73715644720802,
+        "history": 29.37896062001401
+      },
+      "data_confidence": 0.85,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.018 (NORMAL); MFL has the largest weighted sensor contribution (0.018). No sustained directional change exceeds the trend threshold. Historical degradation 0.021; 70% current condition plus 30% historical condition gives health 98.12/100.",
+      "timestamp_s": 595.2377560313336,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "simulation_time_s": 79.0890852522821
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0104",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 98.11190802530979,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.0181130362460589,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.0362260724921178,
+        "anomaly_contribution": 0.0181130362460589
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02067264791553599,
+      "trend_direction": "STABLE",
+      "trend_median_delta": -0.008432220958344377,
+      "trend_window_mean": 0.02067264791553599,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 3,
+      "trend_source_inspections": [
+        "INS-0094",
+        "INS-0099",
+        "INS-0104"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9818869637539411,
+      "historical_trend_health": 0.979327352084464,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 68.73208746277588,
+        "history": 29.37982056253392
+      },
+      "data_confidence": 0.85,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.018 (NORMAL); MFL has the largest weighted sensor contribution (0.018). No sustained directional change exceeds the trend threshold. Historical degradation 0.021; 70% current condition plus 30% historical condition gives health 98.11/100.",
+      "timestamp_s": 601.3519152966926,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "simulation_time_s": 85.20324451764108
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0105",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 66.13174417824082,
+      "health_state": "DEGRADING",
+      "current_anomaly_score": 0.27750526185426505,
+      "current_anomaly_severity": "WATCH",
+      "mfl_evidence": {
+        "deviation": 0.2800105237085303,
+        "anomaly_contribution": 0.14000526185426515
+      },
+      "camera_evidence": {
+        "deviation": 0.2749999999999997,
+        "anomaly_contribution": 0.05499999999999994
+      },
+      "profile_evidence": {
+        "deviation": 0.33,
+        "anomaly_contribution": 0.066
+      },
+      "tension_evidence": {
+        "deviation": 0.1649999999999996,
+        "anomaly_contribution": 0.01649999999999996
+      },
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "trend_score": 0.48142958306535377,
+      "trend_direction": "DEGRADING",
+      "trend_median_delta": 0.13875263092713253,
+      "trend_window_mean": 0.13454800574752243,
+      "trend_deterioration_penalty": 0.3468815773178313,
+      "trend_observation_count": 3,
+      "trend_source_inspections": [
+        "INS-0095",
+        "INS-0100",
+        "INS-0105"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.722494738145735,
+      "historical_trend_health": 0.5185704169346462,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 50.57463167020145,
+        "history": 15.557112508039387
+      },
+      "data_confidence": 0.85,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.278 (WATCH); MFL has the largest weighted sensor contribution (0.140). Repeated anomaly increases confirm deterioration. Historical degradation 0.481; 70% current condition plus 30% historical condition gives health 66.13/100.",
+      "timestamp_s": 607.4660745620515,
+      "inspection_sequence": 20,
+      "run_sequence": 10,
+      "simulation_time_s": 91.31740378300006,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 2,
+        "stage": "DEVELOPING"
+      }
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0106",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 96.19137830156583,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.043148123304814476,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.08629624660962895,
+        "anomaly_contribution": 0.043148123304814476
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02627510223657147,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.00928451075770009,
+      "trend_window_mean": 0.02627510223657147,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 4,
+      "trend_source_inspections": [
+        "INS-0091",
+        "INS-0096",
+        "INS-0101",
+        "INS-0106"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9568518766951856,
+      "historical_trend_health": 0.9737248977634285,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 66.979631368663,
+        "history": 29.211746932902855
+      },
+      "data_confidence": 0.9249999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.043 (NORMAL); MFL has the largest weighted sensor contribution (0.043). No sustained directional change exceeds the trend threshold. Historical degradation 0.026; 70% current condition plus 30% historical condition gives health 96.19/100.",
+      "timestamp_s": 613.5802338274106,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "simulation_time_s": 97.43156304835904
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0107",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 96.19695640014982,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.043061009221849134,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.08612201844369827,
+        "anomaly_contribution": 0.043061009221849134
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.026292431810691543,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.008581448447514513,
+      "trend_window_mean": 0.026292431810691543,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 4,
+      "trend_source_inspections": [
+        "INS-0092",
+        "INS-0097",
+        "INS-0102",
+        "INS-0107"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9569389907781509,
+      "historical_trend_health": 0.9737075681893085,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 66.98572935447056,
+        "history": 29.211227045679255
+      },
+      "data_confidence": 0.9249999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.043 (NORMAL); MFL has the largest weighted sensor contribution (0.043). No sustained directional change exceeds the trend threshold. Historical degradation 0.026; 70% current condition plus 30% historical condition gives health 96.20/100.",
+      "timestamp_s": 619.6943930927695,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "simulation_time_s": 103.54572231371802
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0108",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 96.19088754915084,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.04313977955947965,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.0862795591189593,
+        "anomaly_contribution": 0.04313977955947965
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.02631092938951966,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.009098994435931254,
+      "trend_window_mean": 0.02631092938951966,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 4,
+      "trend_source_inspections": [
+        "INS-0093",
+        "INS-0098",
+        "INS-0103",
+        "INS-0108"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9568602204405203,
+      "historical_trend_health": 0.9736890706104804,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 66.98021543083642,
+        "history": 29.210672118314413
+      },
+      "data_confidence": 0.9249999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.043 (NORMAL); MFL has the largest weighted sensor contribution (0.043). No sustained directional change exceeds the trend threshold. Historical degradation 0.026; 70% current condition plus 30% historical condition gives health 96.19/100.",
+      "timestamp_s": 625.8085523581285,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "simulation_time_s": 109.65988157907698
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0109",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 96.18633637936536,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.04320682635529138,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.08641365271058277,
+        "anomaly_contribution": 0.04320682635529138
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.026306192525474836,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.00918560690825749,
+      "trend_window_mean": 0.026306192525474836,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 4,
+      "trend_source_inspections": [
+        "INS-0094",
+        "INS-0099",
+        "INS-0104",
+        "INS-0109"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9567931736447086,
+      "historical_trend_health": 0.9736938074745252,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 66.9755221551296,
+        "history": 29.210814224235754
+      },
+      "data_confidence": 0.9249999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.043 (NORMAL); MFL has the largest weighted sensor contribution (0.043). No sustained directional change exceeds the trend threshold. Historical degradation 0.026; 70% current condition plus 30% historical condition gives health 96.19/100.",
+      "timestamp_s": 631.9227116234874,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "simulation_time_s": 115.77404084443596
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0110",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 50.42746913239719,
+      "health_state": "DEGRADING",
+      "current_anomaly_score": 0.45409951939788834,
+      "current_anomaly_severity": "WARNING",
+      "mfl_evidence": {
+        "deviation": 0.45819903879577684,
+        "anomaly_contribution": 0.22909951939788842
+      },
+      "camera_evidence": {
+        "deviation": 0.44999999999999984,
+        "anomaly_contribution": 0.08999999999999997
+      },
+      "profile_evidence": {
+        "deviation": 0.5399999999999999,
+        "anomaly_contribution": 0.10799999999999998
+      },
+      "tension_evidence": {
+        "deviation": 0.2699999999999997,
+        "anomaly_contribution": 0.02699999999999997
+      },
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "trend_score": 0.5928521503250208,
+      "trend_direction": "DEGRADING",
+      "trend_median_delta": 0.15136650646596278,
+      "trend_window_mean": 0.21443588416011392,
+      "trend_deterioration_penalty": 0.3784162661649069,
+      "trend_observation_count": 4,
+      "trend_source_inspections": [
+        "INS-0095",
+        "INS-0100",
+        "INS-0105",
+        "INS-0110"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.5459004806021117,
+      "historical_trend_health": 0.4071478496749792,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 38.21303364214782,
+        "history": 12.214435490249375
+      },
+      "data_confidence": 0.9249999999999999,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.454 (WARNING); MFL has the largest weighted sensor contribution (0.229). Repeated anomaly increases confirm deterioration. Historical degradation 0.593; 70% current condition plus 30% historical condition gives health 50.43/100.",
+      "timestamp_s": 638.0368708888465,
+      "inspection_sequence": 21,
+      "run_sequence": 10,
+      "simulation_time_s": 121.88820010979494,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 3,
+        "stage": "MODERATE"
+      }
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0111",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 94.52180251255649,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.06378414518112875,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.1275682903622575,
+        "anomaly_contribution": 0.06378414518112875
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.033776910825482925,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.014960266317007182,
+      "trend_window_mean": 0.033776910825482925,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0091",
+        "INS-0096",
+        "INS-0101",
+        "INS-0106",
+        "INS-0111"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9362158548188713,
+      "historical_trend_health": 0.966223089174517,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 65.53510983732099,
+        "history": 28.98669267523551
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.064 (NORMAL); MFL has the largest weighted sensor contribution (0.064). No sustained directional change exceeds the trend threshold. Historical degradation 0.034; 70% current condition plus 30% historical condition gives health 94.52/100.",
+      "timestamp_s": 644.1510301542054,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "simulation_time_s": 128.00235937515393
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0112",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 94.52273385198919,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.06376641821781867,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.12753283643563734,
+        "anomaly_contribution": 0.06376641821781867
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.03378722909211697,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.014643428721742026,
+      "trend_window_mean": 0.03378722909211697,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0092",
+        "INS-0097",
+        "INS-0102",
+        "INS-0107",
+        "INS-0112"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9362335817821813,
+      "historical_trend_health": 0.966212770907883,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 65.5363507247527,
+        "history": 28.98638312723649
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.064 (NORMAL); MFL has the largest weighted sensor contribution (0.064). No sustained directional change exceeds the trend threshold. Historical degradation 0.034; 70% current condition plus 30% historical condition gives health 94.52/100.",
+      "timestamp_s": 650.2651894195644,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "simulation_time_s": 134.1165186405129
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0113",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 94.54266382630188,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.0634983403730217,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.1269966807460434,
+        "anomaly_contribution": 0.0634983403730217
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.033748411586220065,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.01472877762473665,
+      "trend_window_mean": 0.033748411586220065,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0093",
+        "INS-0098",
+        "INS-0103",
+        "INS-0108",
+        "INS-0113"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9365016596269783,
+      "historical_trend_health": 0.9662515884137799,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 65.55511617388848,
+        "history": 28.987547652413397
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.063 (NORMAL); MFL has the largest weighted sensor contribution (0.063). No sustained directional change exceeds the trend threshold. Historical degradation 0.034; 70% current condition plus 30% historical condition gives health 94.54/100.",
+      "timestamp_s": 656.3793486849233,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "simulation_time_s": 140.2306779058719
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0114",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 94.52647951949858,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.06371278763013173,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.12742557526026346,
+        "anomaly_contribution": 0.06371278763013173
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.03378751154640622,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.014845784091548919,
+      "trend_window_mean": 0.03378751154640622,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0094",
+        "INS-0099",
+        "INS-0104",
+        "INS-0109",
+        "INS-0114"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9362872123698682,
+      "historical_trend_health": 0.9662124884535938,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 65.54010486589078,
+        "history": 28.98637465360781
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.064 (NORMAL); MFL has the largest weighted sensor contribution (0.064). No sustained directional change exceeds the trend threshold. Historical degradation 0.034; 70% current condition plus 30% historical condition gives health 94.53/100.",
+      "timestamp_s": 662.4935079502824,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "simulation_time_s": 146.34483717123086
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0115",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 34.622283082242895,
+      "health_state": "AT RISK",
+      "current_anomaly_score": 0.6306937769415117,
+      "current_anomaly_severity": "WARNING",
+      "mfl_evidence": {
+        "deviation": 0.6363875538830234,
+        "anomaly_contribution": 0.3181937769415117
+      },
+      "camera_evidence": {
+        "deviation": 0.625,
+        "anomaly_contribution": 0.125
+      },
+      "profile_evidence": {
+        "deviation": 0.7500000000000001,
+        "anomaly_contribution": 0.15000000000000002
+      },
+      "tension_evidence": {
+        "deviation": 0.3749999999999998,
+        "anomaly_contribution": 0.03749999999999998
+      },
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "trend_score": 0.7076384177283761,
+      "trend_direction": "DEGRADING",
+      "trend_median_delta": 0.16398038200479303,
+      "trend_window_mean": 0.29768746271639346,
+      "trend_deterioration_penalty": 0.4099509550119826,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0095",
+        "INS-0100",
+        "INS-0105",
+        "INS-0110",
+        "INS-0115"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.36930622305848826,
+      "historical_trend_health": 0.2923615822716239,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 25.85143561409418,
+        "history": 8.770847468148716
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.631 (WARNING); MFL has the largest weighted sensor contribution (0.318). Repeated anomaly increases confirm deterioration. Historical degradation 0.708; 70% current condition plus 30% historical condition gives health 34.62/100.",
+      "timestamp_s": 668.6076672156413,
+      "inspection_sequence": 22,
+      "run_sequence": 10,
+      "simulation_time_s": 152.45899643658984,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 4,
+        "stage": "ADVANCED"
+      }
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0116",
+      "splice_id": "S02",
+      "baseline_source": "INS-0001",
+      "health_score": 93.29272989721913,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.07767535526414766,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.15535071052829533,
+        "anomaly_contribution": 0.07767535526414766
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.042333174476350606,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.017263615979666594,
+      "trend_window_mean": 0.042333174476350606,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0096",
+        "INS-0101",
+        "INS-0106",
+        "INS-0111",
+        "INS-0116"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9223246447358523,
+      "historical_trend_health": 0.9576668255236493,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 64.56272513150967,
+        "history": 28.73000476570948
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.078 (NORMAL); MFL has the largest weighted sensor contribution (0.078). No sustained directional change exceeds the trend threshold. Historical degradation 0.042; 70% current condition plus 30% historical condition gives health 93.29/100.",
+      "timestamp_s": 674.7218264810003,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "simulation_time_s": 158.57315570194882
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0117",
+      "splice_id": "S01",
+      "baseline_source": "INS-0002",
+      "health_score": 93.29775248539676,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.07762231643565921,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.15524463287131843,
+        "anomaly_contribution": 0.07762231643565921
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.042289512136903025,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.01728065360690504,
+      "trend_window_mean": 0.042289512136903025,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0097",
+        "INS-0102",
+        "INS-0107",
+        "INS-0112",
+        "INS-0117"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9223776835643408,
+      "historical_trend_health": 0.957710487863097,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 64.56643784950386,
+        "history": 28.73131463589291
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.078 (NORMAL); MFL has the largest weighted sensor contribution (0.078). No sustained directional change exceeds the trend threshold. Historical degradation 0.042; 70% current condition plus 30% historical condition gives health 93.30/100.",
+      "timestamp_s": 680.8359857463593,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "simulation_time_s": 164.6873149673078
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0118",
+      "splice_id": "S05",
+      "baseline_source": "INS-0003",
+      "health_score": 93.31383646409341,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.07742685943071394,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.15485371886142787,
+        "anomaly_contribution": 0.07742685943071394
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.04220944585855382,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.017143539935617142,
+      "trend_window_mean": 0.04220944585855382,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0098",
+        "INS-0103",
+        "INS-0108",
+        "INS-0113",
+        "INS-0118"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9225731405692861,
+      "historical_trend_health": 0.9577905541414462,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 64.58011983985003,
+        "history": 28.733716624243385
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.077 (NORMAL); MFL has the largest weighted sensor contribution (0.077). No sustained directional change exceeds the trend threshold. Historical degradation 0.042; 70% current condition plus 30% historical condition gives health 93.31/100.",
+      "timestamp_s": 686.9501450117183,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "simulation_time_s": 170.80147423266678
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0119",
+      "splice_id": "S04",
+      "baseline_source": "INS-0004",
+      "health_score": 93.28568613618047,
+      "health_state": "HEALTHY",
+      "current_anomaly_score": 0.07777043929478718,
+      "current_anomaly_severity": "NORMAL",
+      "mfl_evidence": {
+        "deviation": 0.15554087858957436,
+        "anomaly_contribution": 0.07777043929478718
+      },
+      "camera_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "profile_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "tension_evidence": {
+        "deviation": 0.0,
+        "anomaly_contribution": 0.0
+      },
+      "affected_channels": [],
+      "trend_score": 0.04234610377281412,
+      "trend_direction": "STABLE",
+      "trend_median_delta": 0.017281806469747897,
+      "trend_window_mean": 0.04234610377281412,
+      "trend_deterioration_penalty": 0.0,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0099",
+        "INS-0104",
+        "INS-0109",
+        "INS-0114",
+        "INS-0119"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.9222295607052128,
+      "historical_trend_health": 0.9576538962271859,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 64.5560692493649,
+        "history": 28.729616886815577
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.078 (NORMAL); MFL has the largest weighted sensor contribution (0.078). No sustained directional change exceeds the trend threshold. Historical degradation 0.042; 70% current condition plus 30% historical condition gives health 93.29/100.",
+      "timestamp_s": 693.0643042770772,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "simulation_time_s": 176.91563349802576
+    },
+    {
+      "health_version": "phase7_fusion_v1",
+      "inspection_id": "INS-0120",
+      "splice_id": "S03",
+      "baseline_source": "INS-0005",
+      "health_score": 16.470916181866205,
+      "health_state": "CRITICAL",
+      "current_anomaly_score": 0.8072880344851349,
+      "current_anomaly_severity": "CRITICAL",
+      "mfl_evidence": {
+        "deviation": 0.8145760689702699,
+        "anomaly_contribution": 0.40728803448513495
+      },
+      "camera_evidence": {
+        "deviation": 0.7999999999999996,
+        "anomaly_contribution": 0.15999999999999992
+      },
+      "profile_evidence": {
+        "deviation": 0.96,
+        "anomaly_contribution": 0.192
+      },
+      "tension_evidence": {
+        "deviation": 0.47999999999999987,
+        "anomaly_contribution": 0.04799999999999999
+      },
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "trend_score": 0.9006307134724785,
+      "trend_direction": "DEGRADING",
+      "trend_median_delta": 0.1765942575436232,
+      "trend_window_mean": 0.45914506961342044,
+      "trend_deterioration_penalty": 0.441485643859058,
+      "trend_observation_count": 5,
+      "trend_source_inspections": [
+        "INS-0100",
+        "INS-0105",
+        "INS-0110",
+        "INS-0115",
+        "INS-0120"
+      ],
+      "trend_scope": "same splice / same demonstration run / original baseline",
+      "current_condition_component": 0.19271196551486514,
+      "historical_trend_health": 0.09936928652752153,
+      "fusion_weights": {
+        "current": 0.7,
+        "history": 0.3
+      },
+      "health_point_contributions": {
+        "current": 13.48983758604056,
+        "history": 2.981078595825646
+      },
+      "data_confidence": 1.0,
+      "confidence_basis": "Evidence completeness rubric; not statistical probability",
+      "explanation": "Current anomaly 0.807 (CRITICAL); MFL has the largest weighted sensor contribution (0.407). Repeated anomaly increases confirm deterioration. Historical degradation 0.901; 70% current condition plus 30% historical condition gives health 16.47/100.",
+      "timestamp_s": 699.1784635424362,
+      "inspection_sequence": 23,
+      "run_sequence": 10,
+      "simulation_time_s": 183.02979276338473,
+      "synthetic_scenario": {
+        "version": "phase6_progressive_v1",
+        "name": "progressive",
+        "target_splice": "S03",
+        "level": 5,
+        "stage": "SEVERE"
+      }
+    }
+  ],
+  "health_snapshots": 30
+}

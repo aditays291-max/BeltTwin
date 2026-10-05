@@ -1,0 +1,23 @@
+{
+  "version": "phase6_trend_v1",
+  "raw_source": "data/history/S03.json",
+  "points": [
+    {
+      "inspection_id": "INS-0050",
+      "splice_id": "S03",
+      "inspection_sequence": 9,
+      "timestamp_s": 272.7672557568463,
+      "run_sequence": 6,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.0,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "affected_channels": [],
+      "degradation_level": 0,
+      "stage": "HEALTHY"
+    }
+  ]
+}

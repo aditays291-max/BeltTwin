@@ -1,0 +1,193 @@
+{
+  "runs": {
+    "phase3_creation": {
+      "completed_frames": 1950,
+      "requested_frames": 1950,
+      "simulation_seconds": 65.0,
+      "wall_seconds": 75.75009799998952,
+      "approximate_fps": 25.742540953547937,
+      "events": 10,
+      "detected_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "loop_length_m": 36.68495559215387,
+      "prims": 260,
+      "motion": "kinematic encoder-driven animation",
+      "completed": true,
+      "completed_inspections": 10,
+      "pending_inspections": 0,
+      "exactly_24_channels": true,
+      "synchronized_healthy_records": true,
+      "history_storage": "memory only",
+      "station_state_transitions": {
+        "READY": 11,
+        "SCANNING": 10,
+        "COMPLETE": 10
+      },
+      "all_five_detected": true,
+      "baselines_loaded": 0,
+      "baselines_created": 5,
+      "baselines_preserved": 5,
+      "baselines_stored": 5,
+      "baseline_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "pending_baselines": 0
+    },
+    "phase3_restart": {
+      "completed_frames": 1080,
+      "requested_frames": 1080,
+      "simulation_seconds": 36.0,
+      "wall_seconds": 41.84458389994688,
+      "approximate_fps": 25.80979183787202,
+      "events": 5,
+      "detected_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "loop_length_m": 36.68495559215387,
+      "prims": 260,
+      "motion": "kinematic encoder-driven animation",
+      "completed": true,
+      "completed_inspections": 5,
+      "pending_inspections": 0,
+      "exactly_24_channels": true,
+      "synchronized_healthy_records": true,
+      "history_storage": "memory only",
+      "station_state_transitions": {
+        "READY": 6,
+        "SCANNING": 5,
+        "COMPLETE": 5
+      },
+      "all_five_detected": true,
+      "baselines_loaded": 5,
+      "baselines_created": 0,
+      "baselines_preserved": 5,
+      "baselines_stored": 5,
+      "baseline_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "pending_baselines": 0
+    },
+    "phase2_regression": {
+      "completed_frames": 1080,
+      "requested_frames": 1080,
+      "simulation_seconds": 36.0,
+      "wall_seconds": 41.99792549997801,
+      "approximate_fps": 25.715555879077062,
+      "events": 5,
+      "detected_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "loop_length_m": 36.68495559215387,
+      "prims": 260,
+      "motion": "kinematic encoder-driven animation",
+      "completed": true,
+      "completed_inspections": 5,
+      "pending_inspections": 0,
+      "exactly_24_channels": true,
+      "synchronized_healthy_records": true,
+      "history_storage": "memory only",
+      "station_state_transitions": {
+        "READY": 6,
+        "SCANNING": 5,
+        "COMPLETE": 5
+      },
+      "all_five_detected": true
+    },
+    "phase1_regression": {
+      "completed_frames": 1080,
+      "requested_frames": 1080,
+      "simulation_seconds": 36.0,
+      "wall_seconds": 43.609384200011846,
+      "approximate_fps": 24.765311866057182,
+      "events": 5,
+      "detected_splices": [
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "loop_length_m": 36.68495559215387,
+      "prims": 227,
+      "motion": "kinematic encoder-driven animation",
+      "completed": true
+    }
+  },
+  "baseline_integrity": {
+    "S01": {
+      "sha256": "914e1c722ee1fb6e068c4a788f7f48a20db1a400856a0f6eede43b32f18acf8a",
+      "unchanged": true,
+      "mtime_unchanged": true,
+      "mfl_channels": 24,
+      "source_inspection": "INS-0002"
+    },
+    "S02": {
+      "sha256": "6eb28164f1c5c522e1efc12105e197a1a50f9aa269f07a28efb571e8b78a9eb8",
+      "unchanged": true,
+      "mtime_unchanged": true,
+      "mfl_channels": 24,
+      "source_inspection": "INS-0001"
+    },
+    "S03": {
+      "sha256": "ad92d8e84efee40572383bb83852a703a42b2ec99c95ce3a0c72fe46c39e82b4",
+      "unchanged": true,
+      "mtime_unchanged": true,
+      "mfl_channels": 24,
+      "source_inspection": "INS-0005"
+    },
+    "S04": {
+      "sha256": "9c0bd3f8ca4b3bef32e27502798d18dc515f5625229b9132663e55bd192b3e97",
+      "unchanged": true,
+      "mtime_unchanged": true,
+      "mfl_channels": 24,
+      "source_inspection": "INS-0004"
+    },
+    "S05": {
+      "sha256": "933b50f7a1c1a6b427fdd6dfb2832e19fd6bb7b487048740bbf4429ee196f8eb",
+      "unchanged": true,
+      "mtime_unchanged": true,
+      "mfl_channels": 24,
+      "source_inspection": "INS-0003"
+    }
+  },
+  "first_inspection_values_preserved": true,
+  "automated_tests": {
+    "passed": 12,
+    "fingerprint_tests": 6,
+    "phase2_tests": 3,
+    "phase1_tests": 3
+  },
+  "visual_checks": [
+    "creation",
+    "five stored",
+    "preservation",
+    "startup reload",
+    "Phase 2 HUD",
+    "Phase 1 HUD"
+  ],
+  "packages_installed": false,
+  "isaac_installation_files_edited": false,
+  "phase4_implemented": false,
+  "all_acceptance_criteria_passed": true
+}

@@ -1,0 +1,64 @@
+{
+  "health_version": "phase7_fusion_v1",
+  "inspection_id": "INS-0130",
+  "splice_id": "S03",
+  "baseline_source": "INS-0005",
+  "health_score": 89.27820579199431,
+  "health_state": "STABLE",
+  "current_anomaly_score": 0.12613875538830227,
+  "current_anomaly_severity": "NORMAL",
+  "mfl_evidence": {
+    "deviation": 0.12727751077660468,
+    "anomaly_contribution": 0.06363875538830234
+  },
+  "camera_evidence": {
+    "deviation": 0.12499999999999956,
+    "anomaly_contribution": 0.02499999999999991
+  },
+  "profile_evidence": {
+    "deviation": 0.15,
+    "anomaly_contribution": 0.03
+  },
+  "tension_evidence": {
+    "deviation": 0.07500000000000007,
+    "anomaly_contribution": 0.007500000000000007
+  },
+  "affected_channels": [
+    "MFL11"
+  ],
+  "trend_score": 0.06306937769415114,
+  "trend_direction": "STABLE",
+  "trend_median_delta": 0.12613875538830227,
+  "trend_window_mean": 0.06306937769415114,
+  "trend_deterioration_penalty": 0.0,
+  "trend_observation_count": 2,
+  "trend_source_inspections": [
+    "INS-0125",
+    "INS-0130"
+  ],
+  "trend_scope": "same splice / same demonstration run / original baseline",
+  "current_condition_component": 0.8738612446116978,
+  "historical_trend_health": 0.9369306223058489,
+  "fusion_weights": {
+    "current": 0.7,
+    "history": 0.3
+  },
+  "health_point_contributions": {
+    "current": 61.17028712281885,
+    "history": 28.10791866917547
+  },
+  "data_confidence": 0.7749999999999999,
+  "confidence_basis": "Evidence completeness rubric; not statistical probability",
+  "explanation": "Current anomaly 0.126 (NORMAL); MFL has the largest weighted sensor contribution (0.064). Only 2 observation(s): insufficient history to establish a direction. Historical degradation 0.063; 70% current condition plus 30% historical condition gives health 89.28/100.",
+  "timestamp_s": 759.9250709986414,
+  "inspection_sequence": 25,
+  "run_sequence": 11,
+  "simulation_time_s": 60.74660745620516,
+  "synthetic_scenario": {
+    "version": "phase6_progressive_v1",
+    "name": "progressive",
+    "target_splice": "S03",
+    "level": 1,
+    "stage": "EARLY"
+  }
+}

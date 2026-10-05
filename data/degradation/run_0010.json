@@ -1,0 +1,134 @@
+{
+  "version": "phase6_trend_v1",
+  "raw_source": "data/history/S03.json",
+  "points": [
+    {
+      "inspection_id": "INS-0095",
+      "splice_id": "S03",
+      "inspection_sequence": 18,
+      "timestamp_s": 546.3244819084617,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.0,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.0,
+      "camera_deviation": 0.0,
+      "profile_deviation": 0.0,
+      "tension_deviation": 0.0,
+      "affected_channels": [],
+      "degradation_level": 0,
+      "stage": "HEALTHY"
+    },
+    {
+      "inspection_id": "INS-0100",
+      "splice_id": "S03",
+      "inspection_sequence": 19,
+      "timestamp_s": 576.8952782352567,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.12613875538830227,
+      "severity": "NORMAL",
+      "mfl_deviation": 0.12727751077660468,
+      "camera_deviation": 0.12499999999999956,
+      "profile_deviation": 0.15,
+      "tension_deviation": 0.07500000000000007,
+      "affected_channels": [
+        "MFL11"
+      ],
+      "degradation_level": 1,
+      "stage": "EARLY"
+    },
+    {
+      "inspection_id": "INS-0105",
+      "splice_id": "S03",
+      "inspection_sequence": 20,
+      "timestamp_s": 607.4660745620515,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.27750526185426505,
+      "severity": "WATCH",
+      "mfl_deviation": 0.2800105237085303,
+      "camera_deviation": 0.2749999999999997,
+      "profile_deviation": 0.33,
+      "tension_deviation": 0.1649999999999996,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 2,
+      "stage": "DEVELOPING"
+    },
+    {
+      "inspection_id": "INS-0110",
+      "splice_id": "S03",
+      "inspection_sequence": 21,
+      "timestamp_s": 638.0368708888465,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.45409951939788834,
+      "severity": "WARNING",
+      "mfl_deviation": 0.45819903879577684,
+      "camera_deviation": 0.44999999999999984,
+      "profile_deviation": 0.5399999999999999,
+      "tension_deviation": 0.2699999999999997,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 3,
+      "stage": "MODERATE"
+    },
+    {
+      "inspection_id": "INS-0115",
+      "splice_id": "S03",
+      "inspection_sequence": 22,
+      "timestamp_s": 668.6076672156413,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.6306937769415117,
+      "severity": "WARNING",
+      "mfl_deviation": 0.6363875538830234,
+      "camera_deviation": 0.625,
+      "profile_deviation": 0.7500000000000001,
+      "tension_deviation": 0.3749999999999998,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 4,
+      "stage": "ADVANCED"
+    },
+    {
+      "inspection_id": "INS-0120",
+      "splice_id": "S03",
+      "inspection_sequence": 23,
+      "timestamp_s": 699.1784635424362,
+      "run_sequence": 10,
+      "baseline_source": "INS-0005",
+      "anomaly_score": 0.8072880344851349,
+      "severity": "CRITICAL",
+      "mfl_deviation": 0.8145760689702699,
+      "camera_deviation": 0.7999999999999996,
+      "profile_deviation": 0.96,
+      "tension_deviation": 0.47999999999999987,
+      "affected_channels": [
+        "MFL09",
+        "MFL10",
+        "MFL11",
+        "MFL12",
+        "MFL13"
+      ],
+      "degradation_level": 5,
+      "stage": "SEVERE"
+    }
+  ]
+}

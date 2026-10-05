@@ -1,0 +1,19 @@
+{
+  "completed_frames": 1080,
+  "requested_frames": 1080,
+  "simulation_seconds": 36.0,
+  "wall_seconds": 42.660801200021524,
+  "approximate_fps": 25.315980235257634,
+  "events": 5,
+  "detected_splices": [
+    "S01",
+    "S02",
+    "S03",
+    "S04",
+    "S05"
+  ],
+  "loop_length_m": 36.68495559215387,
+  "prims": 227,
+  "motion": "kinematic encoder-driven animation",
+  "completed": true
+}

@@ -1,0 +1,71 @@
+{
+  "health_version": "phase7_fusion_v1",
+  "inspection_id": "INS-0120",
+  "splice_id": "S03",
+  "baseline_source": "INS-0005",
+  "health_score": 16.470916181866205,
+  "health_state": "CRITICAL",
+  "current_anomaly_score": 0.8072880344851349,
+  "current_anomaly_severity": "CRITICAL",
+  "mfl_evidence": {
+    "deviation": 0.8145760689702699,
+    "anomaly_contribution": 0.40728803448513495
+  },
+  "camera_evidence": {
+    "deviation": 0.7999999999999996,
+    "anomaly_contribution": 0.15999999999999992
+  },
+  "profile_evidence": {
+    "deviation": 0.96,
+    "anomaly_contribution": 0.192
+  },
+  "tension_evidence": {
+    "deviation": 0.47999999999999987,
+    "anomaly_contribution": 0.04799999999999999
+  },
+  "affected_channels": [
+    "MFL09",
+    "MFL10",
+    "MFL11",
+    "MFL12",
+    "MFL13"
+  ],
+  "trend_score": 0.9006307134724785,
+  "trend_direction": "DEGRADING",
+  "trend_median_delta": 0.1765942575436232,
+  "trend_window_mean": 0.45914506961342044,
+  "trend_deterioration_penalty": 0.441485643859058,
+  "trend_observation_count": 5,
+  "trend_source_inspections": [
+    "INS-0100",
+    "INS-0105",
+    "INS-0110",
+    "INS-0115",
+    "INS-0120"
+  ],
+  "trend_scope": "same splice / same demonstration run / original baseline",
+  "current_condition_component": 0.19271196551486514,
+  "historical_trend_health": 0.09936928652752153,
+  "fusion_weights": {
+    "current": 0.7,
+    "history": 0.3
+  },
+  "health_point_contributions": {
+    "current": 13.48983758604056,
+    "history": 2.981078595825646
+  },
+  "data_confidence": 1.0,
+  "confidence_basis": "Evidence completeness rubric; not statistical probability",
+  "explanation": "Current anomaly 0.807 (CRITICAL); MFL has the largest weighted sensor contribution (0.407). Repeated anomaly increases confirm deterioration. Historical degradation 0.901; 70% current condition plus 30% historical condition gives health 16.47/100.",
+  "timestamp_s": 699.1784635424362,
+  "inspection_sequence": 23,
+  "run_sequence": 10,
+  "simulation_time_s": 183.02979276338473,
+  "synthetic_scenario": {
+    "version": "phase6_progressive_v1",
+    "name": "progressive",
+    "target_splice": "S03",
+    "level": 5,
+    "stage": "SEVERE"
+  }
+}
