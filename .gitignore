@@ -3,6 +3,7 @@ __pycache__/
 data/runtime/
 data/*.log
 screenshots/*.png
+screenshots/**/*.png
 *.lock
 *.tmp
 data/test-checkout-*/
