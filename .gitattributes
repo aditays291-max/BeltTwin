@@ -1,0 +1,12 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+*.ps1 text eol=crlf
+*.png binary
+*.usda text eol=lf
+# Accepted evidence includes byte-level hashes. Preserve these exact bytes.
+/data/** -text
+/scripts/anomaly_detector.py -text
+/scripts/degradation_scenario.py -text

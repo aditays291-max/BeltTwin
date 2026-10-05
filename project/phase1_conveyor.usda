@@ -1,0 +1,1936 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    endTimeCode = 100
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Z"
+)
+
+def "Render" (
+    hide_in_stage_window = true
+    no_delete = true
+)
+{
+    def "OmniverseKit"
+    {
+        def "HydraTextures" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            def RenderProduct "omni_kit_widget_viewport_ViewportTexture_0" (
+                prepend apiSchemas = ["OmniRtxSettingsCommonAdvancedAPI_1", "OmniRtxSettingsRtAdvancedAPI_1", "OmniRtxSettingsPtAdvancedAPI_1", "OmniRtxSettingsParticleFieldAPI_1", "OmniRtxPostColorGradingAPI_1", "OmniRtxPostChromaticAberrationAPI_1", "OmniRtxPostBloomPhysicalAPI_1", "OmniRtxPostMatteObjectAPI_1", "OmniRtxPostCompositingAPI_1", "OmniRtxPostDofAPI_1", "OmniRtxPostMotionBlurAPI_1", "OmniRtxPostTvNoiseAPI_1", "OmniRtxPostTonemapIrayReinhardAPI_1", "OmniRtxPostDebugSettingsAPI_1", "OmniRtxDebugSettingsAPI_1"]
+                hide_in_stage_window = true
+                no_delete = true
+            )
+            {
+                rel camera = </OmniverseKit_Persp>
+                token omni:rtx:ambientOcclusion:denoiserMode = "none"
+                token omni:rtx:background:source:texture:textureMode = "repeatMirrored"
+                token omni:rtx:background:source:type = "domeLight"
+                bool omni:rtx:debug:view:pixelDebug:enableFixedTextPos = 1
+                token omni:rtx:directLighting:sampledLighting:denoisingTechnique = "None"
+                bool omni:rtx:dlss:frameGeneration = 1
+                bool omni:rtx:indirectDiffuse:denoiser:enabled = 0
+                bool omni:rtx:material:db:syncLoads = 1
+                bool omni:rtx:post:registeredCompositing:invertColorCorrection = 1
+                bool omni:rtx:post:registeredCompositing:invertToneMap = 1
+                bool omni:rtx:pt:adaptiveSampling:filterError = 0
+                uint omni:rtx:pt:adaptiveSampling:fixedSppIterations = 2
+                int omni:rtx:pt:clampSpp = 64
+                uint omni:rtx:pt:limits:maxBounces = 3
+                uint omni:rtx:pt:limits:maxGlossyBounces = 3
+                uint omni:rtx:pt:maxSamplesPerLaunch = 2073600
+                uint omni:rtx:pt:mgpu:maxPixelsPerRegionExponent = 12
+                int omni:rtx:pt:samplesPerIteration = 64
+                uint omni:rtx:pt:samplesPerPixel = 64
+                bool omni:rtx:reflections:denoiser:enabled = 0
+                token omni:rtx:rendermode = "RealTimePathTracing"
+                color3f omni:rtx:rt:ambientLight:color = (0.1, 0.1, 0.1)
+                bool omni:rtx:rt:demoire = 0
+                bool omni:rtx:rt:lightcache:spatialCache:dontResolveConflicts = 1
+                int omni:rtx:rt:sss:samples = 1
+                uint omni:rtx:rtpt:maxVolumeBounces = 15
+                float omni:rtx:rtpt:modulatingRoughnessThreshold = 0.08
+                bool omni:rtx:scene:hydra:materialSyncLoads = 1
+                rel orderedVars = </Render/Vars/LdrColor>
+                custom bool overrideClipRange = 0
+                uniform int2 resolution = (1280, 720)
+            }
+        }
+    }
+
+    def RenderSettings "OmniverseGlobalRenderSettings" (
+        prepend apiSchemas = ["OmniRtxSettingsGlobalRtAdvancedAPI_1", "OmniRtxSettingsGlobalPtAdvancedAPI_1"]
+        no_delete = true
+    )
+    {
+        rel products = </Render/OmniverseKit/HydraTextures/omni_kit_widget_viewport_ViewportTexture_0>
+    }
+
+    def "Vars" (
+        hide_in_stage_window = true
+        no_delete = true
+    )
+    {
+        def RenderVar "LdrColor" (
+            hide_in_stage_window = true
+            no_delete = true
+        )
+        {
+            uniform string sourceName = "LdrColor"
+            uniform token sourceType = "raw"
+        }
+    }
+}
+
+over "OmniverseKit_Persp"
+{
+    float exposure:fStop = 5
+    float exposure:responsivity = 1.1026709
+    float exposure:time = 0.02
+}
+
+def Xform "World"
+{
+    def Cube "Ground"
+    {
+        color3f[] primvars:displayColor = [(0.16, 0.19, 0.22)]
+        double size = 1
+        float3 xformOp:scale = (27, 15, 0.2)
+        double3 xformOp:translate = (0, 0, -0.12)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "Lane_0"
+    {
+        color3f[] primvars:displayColor = [(0.85, 0.61, 0.16)]
+        double size = 1
+        float3 xformOp:scale = (20, 0.07, 0.015)
+        double3 xformOp:translate = (0, -1.7, -0.012)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def Cube "Lane_1"
+    {
+        color3f[] primvars:displayColor = [(0.85, 0.61, 0.16)]
+        double size = 1
+        float3 xformOp:scale = (20, 0.07, 0.015)
+        double3 xformOp:translate = (0, 1.7, -0.012)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+    }
+
+    def DomeLight "Ambient"
+    {
+        float inputs:intensity = 600
+    }
+
+    def DistantLight "Sun"
+    {
+        float inputs:intensity = 1800
+        float3 xformOp:rotateXYZ = (-35, -25, 20)
+        uniform token[] xformOpOrder = ["xformOp:rotateXYZ"]
+    }
+
+    def "Conveyor"
+    {
+        def Cube "UpperBelt"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.06, 0.065)]
+            double size = 1
+            float3 xformOp:scale = (17.4, 1, 0.025)
+            double3 xformOp:translate = (0, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "ReturnBelt"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.06, 0.065)]
+            double size = 1
+            float3 xformOp:scale = (17.4, 1, 0.025)
+            double3 xformOp:translate = (0, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def "Frame"
+    {
+        def Cube "Rail_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (18, 0.12, 0.17)
+            double3 xformOp:translate = (0, -0.65, 1.14)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Rail_2"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (18, 0.12, 0.17)
+            double3 xformOp:translate = (0, 0.65, 1.14)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_0_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-8, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_0_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-8, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_0_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-8, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_0_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-8, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (-8, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_1_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-5, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_1_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-5, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_1_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-5, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_1_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-5, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (-5, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_2_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-2, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_2_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-2, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_2_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (-2, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_2_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (-2, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_2"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (-2, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_3_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (1, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_3_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (1, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_3_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (1, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_3_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (1, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_3"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (1, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_4_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (4, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_4_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (4, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_4_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (4, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_4_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (4, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_4"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (4, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_5_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (7, -0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_5_0"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (7, -0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Leg_5_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.13, 0.13, 1.1)
+            double3 xformOp:translate = (7, 0.65, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_5_1"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.45, 0.36, 0.1)
+            double3 xformOp:translate = (7, 0.65, 0.055)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Brace_5"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.12, 1.35, 0.12)
+            double3 xformOp:translate = (7, 0, 0.55)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def "Rollers"
+    {
+        def Cylinder "Idler_0"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-8.1, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_1"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-7.02, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_2"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-5.9399999999999995, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_3"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-4.859999999999999, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_4"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-3.7799999999999994, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_5"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-2.6999999999999993, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_6"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-1.6199999999999992, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_7"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (-0.5399999999999991, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_8"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (0.5400000000000009, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_9"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (1.620000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_10"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (2.700000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_11"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (3.780000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_12"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (4.860000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_13"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (5.940000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_14"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (7.020000000000001, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Idler_15"
+        {
+            uniform token axis = "Y"
+            double height = 1.22
+            color3f[] primvars:displayColor = [(0.38, 0.43, 0.46)]
+            double radius = 0.115
+            double3 xformOp:translate = (8.100000000000003, 0, 1.37)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cylinder "Drum_0"
+        {
+            uniform token axis = "Y"
+            double height = 1.05
+            color3f[] primvars:displayColor = [(0.045, 0.06, 0.065)]
+            double radius = 0.3
+            double3 xformOp:translate = (-8.7, 0, 1.2)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "Hub_0"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-8.7, -0.59, 1.2)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cylinder "Cap"
+            {
+                uniform token axis = "Y"
+                double height = 0.08
+                color3f[] primvars:displayColor = [(0.6, 0.65, 0.7)]
+                double radius = 0.22
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            def Cube "Spoke"
+            {
+                color3f[] primvars:displayColor = [(0.95, 0.55, 0.1)]
+                double size = 1
+                float3 xformOp:scale = (0.36, 0.015, 0.045)
+                double3 xformOp:translate = (0, -0.05, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Cylinder "Drum_1"
+        {
+            uniform token axis = "Y"
+            double height = 1.05
+            color3f[] primvars:displayColor = [(0.045, 0.06, 0.065)]
+            double radius = 0.3
+            double3 xformOp:translate = (8.7, 0, 1.2)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "Hub_1"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (8.7, -0.59, 1.2)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cylinder "Cap"
+            {
+                uniform token axis = "Y"
+                double height = 0.08
+                color3f[] primvars:displayColor = [(0.6, 0.65, 0.7)]
+                double radius = 0.22
+                double3 xformOp:translate = (0, 0, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+            }
+
+            def Cube "Spoke"
+            {
+                color3f[] primvars:displayColor = [(0.95, 0.55, 0.1)]
+                double size = 1
+                float3 xformOp:scale = (0.36, 0.015, 0.045)
+                double3 xformOp:translate = (0, -0.05, 0)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+    }
+
+    def "Splices"
+    {
+        def Xform "S01" (
+            customData = {
+                string splice_id = "S01"
+            }
+        )
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-8.7, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Marker"
+            {
+                color3f[] primvars:displayColor = [(1, 0.45, 0.08)]
+                double size = 1
+                float3 xformOp:scale = (0.32, 1.02, 0.025)
+                double3 xformOp:translate = (0, 0, 0.006)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "ActiveHighlight"
+            {
+                color3f[] primvars:displayColor = [(1, 0.92, 0.24)]
+                double size = 1
+                token visibility = "invisible"
+                float3 xformOp:scale = (0.42, 1.02, 0.005)
+                double3 xformOp:translate = (0, 0, 0.022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Mesh "Label"
+            {
+                uniform bool doubleSided = 1
+                int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123]
+                point3f[] points = [(0.076, -0.19, 0.023), (0.10944, -0.19, 0.023), (0.10944, -0.15656, 0.023), (0.076, -0.15656, 0.023), (0.076, -0.152, 0.023), (0.10944, -0.152, 0.023), (0.10944, -0.11856, 0.023), (0.076, -0.11856, 0.023), (0.076, -0.114, 0.023), (0.10944, -0.114, 0.023), (0.10944, -0.08056, 0.023), (0.076, -0.08056, 0.023), (0.038, -0.19, 0.023), (0.07144, -0.19, 0.023), (0.07144, -0.15656, 0.023), (0.038, -0.15656, 0.023), (0, -0.19, 0.023), (0.03344, -0.19, 0.023), (0.03344, -0.15656, 0.023), (0, -0.15656, 0.023), (0, -0.152, 0.023), (0.03344, -0.152, 0.023), (0.03344, -0.11856, 0.023), (0, -0.11856, 0.023), (0, -0.114, 0.023), (0.03344, -0.114, 0.023), (0.03344, -0.08056, 0.023), (0, -0.08056, 0.023), (-0.038, -0.114, 0.023), (-0.00456, -0.114, 0.023), (-0.00456, -0.08056, 0.023), (-0.038, -0.08056, 0.023), (-0.076, -0.19, 0.023), (-0.04256, -0.19, 0.023), (-0.04256, -0.15656, 0.023), (-0.076, -0.15656, 0.023), (-0.076, -0.152, 0.023), (-0.04256, -0.152, 0.023), (-0.04256, -0.11856, 0.023), (-0.076, -0.11856, 0.023), (-0.076, -0.114, 0.023), (-0.04256, -0.114, 0.023), (-0.04256, -0.08056, 0.023), (-0.076, -0.08056, 0.023), (0.076, -0.038, 0.023), (0.10944, -0.038, 0.023), (0.10944, -0.00456, 0.023), (0.076, -0.00456, 0.023), (0.076, 0, 0.023), (0.10944, 0, 0.023), (0.10944, 0.03344, 0.023), (0.076, 0.03344, 0.023), (0.076, 0.038, 0.023), (0.10944, 0.038, 0.023), (0.10944, 0.07144, 0.023), (0.076, 0.07144, 0.023), (0.038, -0.038, 0.023), (0.07144, -0.038, 0.023), (0.07144, -0.00456, 0.023), (0.038, -0.00456, 0.023), (0.038, 0.038, 0.023), (0.07144, 0.038, 0.023), (0.07144, 0.07144, 0.023), (0.038, 0.07144, 0.023), (0, -0.038, 0.023), (0.03344, -0.038, 0.023), (0.03344, -0.00456, 0.023), (0, -0.00456, 0.023), (0, 0.038, 0.023), (0.03344, 0.038, 0.023), (0.03344, 0.07144, 0.023), (0, 0.07144, 0.023), (-0.038, -0.038, 0.023), (-0.00456, -0.038, 0.023), (-0.00456, -0.00456, 0.023), (-0.038, -0.00456, 0.023), (-0.038, 0.038, 0.023), (-0.00456, 0.038, 0.023), (-0.00456, 0.07144, 0.023), (-0.038, 0.07144, 0.023), (-0.076, -0.038, 0.023), (-0.04256, -0.038, 0.023), (-0.04256, -0.00456, 0.023), (-0.076, -0.00456, 0.023), (-0.076, 0, 0.023), (-0.04256, 0, 0.023), (-0.04256, 0.03344, 0.023), (-0.076, 0.03344, 0.023), (-0.076, 0.038, 0.023), (-0.04256, 0.038, 0.023), (-0.04256, 0.07144, 0.023), (-0.076, 0.07144, 0.023), (0.076, 0.152, 0.023), (0.10944, 0.152, 0.023), (0.10944, 0.18544, 0.023), (0.076, 0.18544, 0.023), (0.038, 0.114, 0.023), (0.07144, 0.114, 0.023), (0.07144, 0.14744, 0.023), (0.038, 0.14744, 0.023), (0.038, 0.152, 0.023), (0.07144, 0.152, 0.023), (0.07144, 0.18544, 0.023), (0.038, 0.18544, 0.023), (0, 0.152, 0.023), (0.03344, 0.152, 0.023), (0.03344, 0.18544, 0.023), (0, 0.18544, 0.023), (-0.038, 0.152, 0.023), (-0.00456, 0.152, 0.023), (-0.00456, 0.18544, 0.023), (-0.038, 0.18544, 0.023), (-0.076, 0.114, 0.023), (-0.04256, 0.114, 0.023), (-0.04256, 0.14744, 0.023), (-0.076, 0.14744, 0.023), (-0.076, 0.152, 0.023), (-0.04256, 0.152, 0.023), (-0.04256, 0.18544, 0.023), (-0.076, 0.18544, 0.023), (-0.076, 0.19, 0.023), (-0.04256, 0.19, 0.023), (-0.04256, 0.22344, 0.023), (-0.076, 0.22344, 0.023)]
+                color3f[] primvars:displayColor = [(0.015, 0.02, 0.025)]
+                uniform token subdivisionScheme = "none"
+            }
+        }
+
+        def Xform "S02" (
+            customData = {
+                string splice_id = "S02"
+            }
+        )
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-1.3630088815692254, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Marker"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.75, 0.95)]
+                double size = 1
+                float3 xformOp:scale = (0.32, 1.02, 0.025)
+                double3 xformOp:translate = (0, 0, 0.006)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "ActiveHighlight"
+            {
+                color3f[] primvars:displayColor = [(1, 0.92, 0.24)]
+                double size = 1
+                token visibility = "invisible"
+                float3 xformOp:scale = (0.42, 1.02, 0.005)
+                double3 xformOp:translate = (0, 0, 0.022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Mesh "Label"
+            {
+                uniform bool doubleSided = 1
+                int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135]
+                point3f[] points = [(0.076, -0.19, 0.023), (0.10944, -0.19, 0.023), (0.10944, -0.15656, 0.023), (0.076, -0.15656, 0.023), (0.076, -0.152, 0.023), (0.10944, -0.152, 0.023), (0.10944, -0.11856, 0.023), (0.076, -0.11856, 0.023), (0.076, -0.114, 0.023), (0.10944, -0.114, 0.023), (0.10944, -0.08056, 0.023), (0.076, -0.08056, 0.023), (0.038, -0.19, 0.023), (0.07144, -0.19, 0.023), (0.07144, -0.15656, 0.023), (0.038, -0.15656, 0.023), (0, -0.19, 0.023), (0.03344, -0.19, 0.023), (0.03344, -0.15656, 0.023), (0, -0.15656, 0.023), (0, -0.152, 0.023), (0.03344, -0.152, 0.023), (0.03344, -0.11856, 0.023), (0, -0.11856, 0.023), (0, -0.114, 0.023), (0.03344, -0.114, 0.023), (0.03344, -0.08056, 0.023), (0, -0.08056, 0.023), (-0.038, -0.114, 0.023), (-0.00456, -0.114, 0.023), (-0.00456, -0.08056, 0.023), (-0.038, -0.08056, 0.023), (-0.076, -0.19, 0.023), (-0.04256, -0.19, 0.023), (-0.04256, -0.15656, 0.023), (-0.076, -0.15656, 0.023), (-0.076, -0.152, 0.023), (-0.04256, -0.152, 0.023), (-0.04256, -0.11856, 0.023), (-0.076, -0.11856, 0.023), (-0.076, -0.114, 0.023), (-0.04256, -0.114, 0.023), (-0.04256, -0.08056, 0.023), (-0.076, -0.08056, 0.023), (0.076, -0.038, 0.023), (0.10944, -0.038, 0.023), (0.10944, -0.00456, 0.023), (0.076, -0.00456, 0.023), (0.076, 0, 0.023), (0.10944, 0, 0.023), (0.10944, 0.03344, 0.023), (0.076, 0.03344, 0.023), (0.076, 0.038, 0.023), (0.10944, 0.038, 0.023), (0.10944, 0.07144, 0.023), (0.076, 0.07144, 0.023), (0.038, -0.038, 0.023), (0.07144, -0.038, 0.023), (0.07144, -0.00456, 0.023), (0.038, -0.00456, 0.023), (0.038, 0.038, 0.023), (0.07144, 0.038, 0.023), (0.07144, 0.07144, 0.023), (0.038, 0.07144, 0.023), (0, -0.038, 0.023), (0.03344, -0.038, 0.023), (0.03344, -0.00456, 0.023), (0, -0.00456, 0.023), (0, 0.038, 0.023), (0.03344, 0.038, 0.023), (0.03344, 0.07144, 0.023), (0, 0.07144, 0.023), (-0.038, -0.038, 0.023), (-0.00456, -0.038, 0.023), (-0.00456, -0.00456, 0.023), (-0.038, -0.00456, 0.023), (-0.038, 0.038, 0.023), (-0.00456, 0.038, 0.023), (-0.00456, 0.07144, 0.023), (-0.038, 0.07144, 0.023), (-0.076, -0.038, 0.023), (-0.04256, -0.038, 0.023), (-0.04256, -0.00456, 0.023), (-0.076, -0.00456, 0.023), (-0.076, 0, 0.023), (-0.04256, 0, 0.023), (-0.04256, 0.03344, 0.023), (-0.076, 0.03344, 0.023), (-0.076, 0.038, 0.023), (-0.04256, 0.038, 0.023), (-0.04256, 0.07144, 0.023), (-0.076, 0.07144, 0.023), (0.076, 0.114, 0.023), (0.10944, 0.114, 0.023), (0.10944, 0.14744, 0.023), (0.076, 0.14744, 0.023), (0.076, 0.152, 0.023), (0.10944, 0.152, 0.023), (0.10944, 0.18544, 0.023), (0.076, 0.18544, 0.023), (0.076, 0.19, 0.023), (0.10944, 0.19, 0.023), (0.10944, 0.22344, 0.023), (0.076, 0.22344, 0.023), (0.038, 0.19, 0.023), (0.07144, 0.19, 0.023), (0.07144, 0.22344, 0.023), (0.038, 0.22344, 0.023), (0, 0.114, 0.023), (0.03344, 0.114, 0.023), (0.03344, 0.14744, 0.023), (0, 0.14744, 0.023), (0, 0.152, 0.023), (0.03344, 0.152, 0.023), (0.03344, 0.18544, 0.023), (0, 0.18544, 0.023), (0, 0.19, 0.023), (0.03344, 0.19, 0.023), (0.03344, 0.22344, 0.023), (0, 0.22344, 0.023), (-0.038, 0.114, 0.023), (-0.00456, 0.114, 0.023), (-0.00456, 0.14744, 0.023), (-0.038, 0.14744, 0.023), (-0.076, 0.114, 0.023), (-0.04256, 0.114, 0.023), (-0.04256, 0.14744, 0.023), (-0.076, 0.14744, 0.023), (-0.076, 0.152, 0.023), (-0.04256, 0.152, 0.023), (-0.04256, 0.18544, 0.023), (-0.076, 0.18544, 0.023), (-0.076, 0.19, 0.023), (-0.04256, 0.19, 0.023), (-0.04256, 0.22344, 0.023), (-0.076, 0.22344, 0.023)]
+                color3f[] primvars:displayColor = [(0.015, 0.02, 0.025)]
+                uniform token subdivisionScheme = "none"
+            }
+        }
+
+        def Xform "S03" (
+            customData = {
+                string splice_id = "S03"
+            }
+        )
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (5.9739822368615485, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Marker"
+            {
+                color3f[] primvars:displayColor = [(0.9, 0.75, 0.1)]
+                double size = 1
+                float3 xformOp:scale = (0.32, 1.02, 0.025)
+                double3 xformOp:translate = (0, 0, 0.006)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "ActiveHighlight"
+            {
+                color3f[] primvars:displayColor = [(1, 0.92, 0.24)]
+                double size = 1
+                token visibility = "invisible"
+                float3 xformOp:scale = (0.42, 1.02, 0.005)
+                double3 xformOp:translate = (0, 0, 0.022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Mesh "Label"
+            {
+                uniform bool doubleSided = 1
+                int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135]
+                point3f[] points = [(0.076, -0.19, 0.023), (0.10944, -0.19, 0.023), (0.10944, -0.15656, 0.023), (0.076, -0.15656, 0.023), (0.076, -0.152, 0.023), (0.10944, -0.152, 0.023), (0.10944, -0.11856, 0.023), (0.076, -0.11856, 0.023), (0.076, -0.114, 0.023), (0.10944, -0.114, 0.023), (0.10944, -0.08056, 0.023), (0.076, -0.08056, 0.023), (0.038, -0.19, 0.023), (0.07144, -0.19, 0.023), (0.07144, -0.15656, 0.023), (0.038, -0.15656, 0.023), (0, -0.19, 0.023), (0.03344, -0.19, 0.023), (0.03344, -0.15656, 0.023), (0, -0.15656, 0.023), (0, -0.152, 0.023), (0.03344, -0.152, 0.023), (0.03344, -0.11856, 0.023), (0, -0.11856, 0.023), (0, -0.114, 0.023), (0.03344, -0.114, 0.023), (0.03344, -0.08056, 0.023), (0, -0.08056, 0.023), (-0.038, -0.114, 0.023), (-0.00456, -0.114, 0.023), (-0.00456, -0.08056, 0.023), (-0.038, -0.08056, 0.023), (-0.076, -0.19, 0.023), (-0.04256, -0.19, 0.023), (-0.04256, -0.15656, 0.023), (-0.076, -0.15656, 0.023), (-0.076, -0.152, 0.023), (-0.04256, -0.152, 0.023), (-0.04256, -0.11856, 0.023), (-0.076, -0.11856, 0.023), (-0.076, -0.114, 0.023), (-0.04256, -0.114, 0.023), (-0.04256, -0.08056, 0.023), (-0.076, -0.08056, 0.023), (0.076, -0.038, 0.023), (0.10944, -0.038, 0.023), (0.10944, -0.00456, 0.023), (0.076, -0.00456, 0.023), (0.076, 0, 0.023), (0.10944, 0, 0.023), (0.10944, 0.03344, 0.023), (0.076, 0.03344, 0.023), (0.076, 0.038, 0.023), (0.10944, 0.038, 0.023), (0.10944, 0.07144, 0.023), (0.076, 0.07144, 0.023), (0.038, -0.038, 0.023), (0.07144, -0.038, 0.023), (0.07144, -0.00456, 0.023), (0.038, -0.00456, 0.023), (0.038, 0.038, 0.023), (0.07144, 0.038, 0.023), (0.07144, 0.07144, 0.023), (0.038, 0.07144, 0.023), (0, -0.038, 0.023), (0.03344, -0.038, 0.023), (0.03344, -0.00456, 0.023), (0, -0.00456, 0.023), (0, 0.038, 0.023), (0.03344, 0.038, 0.023), (0.03344, 0.07144, 0.023), (0, 0.07144, 0.023), (-0.038, -0.038, 0.023), (-0.00456, -0.038, 0.023), (-0.00456, -0.00456, 0.023), (-0.038, -0.00456, 0.023), (-0.038, 0.038, 0.023), (-0.00456, 0.038, 0.023), (-0.00456, 0.07144, 0.023), (-0.038, 0.07144, 0.023), (-0.076, -0.038, 0.023), (-0.04256, -0.038, 0.023), (-0.04256, -0.00456, 0.023), (-0.076, -0.00456, 0.023), (-0.076, 0, 0.023), (-0.04256, 0, 0.023), (-0.04256, 0.03344, 0.023), (-0.076, 0.03344, 0.023), (-0.076, 0.038, 0.023), (-0.04256, 0.038, 0.023), (-0.04256, 0.07144, 0.023), (-0.076, 0.07144, 0.023), (0.076, 0.114, 0.023), (0.10944, 0.114, 0.023), (0.10944, 0.14744, 0.023), (0.076, 0.14744, 0.023), (0.076, 0.152, 0.023), (0.10944, 0.152, 0.023), (0.10944, 0.18544, 0.023), (0.076, 0.18544, 0.023), (0.076, 0.19, 0.023), (0.10944, 0.19, 0.023), (0.10944, 0.22344, 0.023), (0.076, 0.22344, 0.023), (0.038, 0.19, 0.023), (0.07144, 0.19, 0.023), (0.07144, 0.22344, 0.023), (0.038, 0.22344, 0.023), (0, 0.114, 0.023), (0.03344, 0.114, 0.023), (0.03344, 0.14744, 0.023), (0, 0.14744, 0.023), (0, 0.152, 0.023), (0.03344, 0.152, 0.023), (0.03344, 0.18544, 0.023), (0, 0.18544, 0.023), (0, 0.19, 0.023), (0.03344, 0.19, 0.023), (0.03344, 0.22344, 0.023), (0, 0.22344, 0.023), (-0.038, 0.19, 0.023), (-0.00456, 0.19, 0.023), (-0.00456, 0.22344, 0.023), (-0.038, 0.22344, 0.023), (-0.076, 0.114, 0.023), (-0.04256, 0.114, 0.023), (-0.04256, 0.14744, 0.023), (-0.076, 0.14744, 0.023), (-0.076, 0.152, 0.023), (-0.04256, 0.152, 0.023), (-0.04256, 0.18544, 0.023), (-0.076, 0.18544, 0.023), (-0.076, 0.19, 0.023), (-0.04256, 0.19, 0.023), (-0.04256, 0.22344, 0.023), (-0.076, 0.22344, 0.023)]
+                color3f[] primvars:displayColor = [(0.015, 0.02, 0.025)]
+                uniform token subdivisionScheme = "none"
+            }
+        }
+
+        def Xform "S04" (
+            customData = {
+                string splice_id = "S04"
+            }
+        )
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (5.031504440784614, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Marker"
+            {
+                color3f[] primvars:displayColor = [(0.55, 0.35, 0.95)]
+                double size = 1
+                float3 xformOp:scale = (0.32, 1.02, 0.025)
+                double3 xformOp:translate = (0, 0, 0.006)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "ActiveHighlight"
+            {
+                color3f[] primvars:displayColor = [(1, 0.92, 0.24)]
+                double size = 1
+                token visibility = "invisible"
+                float3 xformOp:scale = (0.42, 1.02, 0.005)
+                double3 xformOp:translate = (0, 0, 0.022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Mesh "Label"
+            {
+                uniform bool doubleSided = 1
+                int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127]
+                point3f[] points = [(0.076, -0.19, 0.023), (0.10944, -0.19, 0.023), (0.10944, -0.15656, 0.023), (0.076, -0.15656, 0.023), (0.076, -0.152, 0.023), (0.10944, -0.152, 0.023), (0.10944, -0.11856, 0.023), (0.076, -0.11856, 0.023), (0.076, -0.114, 0.023), (0.10944, -0.114, 0.023), (0.10944, -0.08056, 0.023), (0.076, -0.08056, 0.023), (0.038, -0.19, 0.023), (0.07144, -0.19, 0.023), (0.07144, -0.15656, 0.023), (0.038, -0.15656, 0.023), (0, -0.19, 0.023), (0.03344, -0.19, 0.023), (0.03344, -0.15656, 0.023), (0, -0.15656, 0.023), (0, -0.152, 0.023), (0.03344, -0.152, 0.023), (0.03344, -0.11856, 0.023), (0, -0.11856, 0.023), (0, -0.114, 0.023), (0.03344, -0.114, 0.023), (0.03344, -0.08056, 0.023), (0, -0.08056, 0.023), (-0.038, -0.114, 0.023), (-0.00456, -0.114, 0.023), (-0.00456, -0.08056, 0.023), (-0.038, -0.08056, 0.023), (-0.076, -0.19, 0.023), (-0.04256, -0.19, 0.023), (-0.04256, -0.15656, 0.023), (-0.076, -0.15656, 0.023), (-0.076, -0.152, 0.023), (-0.04256, -0.152, 0.023), (-0.04256, -0.11856, 0.023), (-0.076, -0.11856, 0.023), (-0.076, -0.114, 0.023), (-0.04256, -0.114, 0.023), (-0.04256, -0.08056, 0.023), (-0.076, -0.08056, 0.023), (0.076, -0.038, 0.023), (0.10944, -0.038, 0.023), (0.10944, -0.00456, 0.023), (0.076, -0.00456, 0.023), (0.076, 0, 0.023), (0.10944, 0, 0.023), (0.10944, 0.03344, 0.023), (0.076, 0.03344, 0.023), (0.076, 0.038, 0.023), (0.10944, 0.038, 0.023), (0.10944, 0.07144, 0.023), (0.076, 0.07144, 0.023), (0.038, -0.038, 0.023), (0.07144, -0.038, 0.023), (0.07144, -0.00456, 0.023), (0.038, -0.00456, 0.023), (0.038, 0.038, 0.023), (0.07144, 0.038, 0.023), (0.07144, 0.07144, 0.023), (0.038, 0.07144, 0.023), (0, -0.038, 0.023), (0.03344, -0.038, 0.023), (0.03344, -0.00456, 0.023), (0, -0.00456, 0.023), (0, 0.038, 0.023), (0.03344, 0.038, 0.023), (0.03344, 0.07144, 0.023), (0, 0.07144, 0.023), (-0.038, -0.038, 0.023), (-0.00456, -0.038, 0.023), (-0.00456, -0.00456, 0.023), (-0.038, -0.00456, 0.023), (-0.038, 0.038, 0.023), (-0.00456, 0.038, 0.023), (-0.00456, 0.07144, 0.023), (-0.038, 0.07144, 0.023), (-0.076, -0.038, 0.023), (-0.04256, -0.038, 0.023), (-0.04256, -0.00456, 0.023), (-0.076, -0.00456, 0.023), (-0.076, 0, 0.023), (-0.04256, 0, 0.023), (-0.04256, 0.03344, 0.023), (-0.076, 0.03344, 0.023), (-0.076, 0.038, 0.023), (-0.04256, 0.038, 0.023), (-0.04256, 0.07144, 0.023), (-0.076, 0.07144, 0.023), (0.076, 0.114, 0.023), (0.10944, 0.114, 0.023), (0.10944, 0.14744, 0.023), (0.076, 0.14744, 0.023), (0.076, 0.19, 0.023), (0.10944, 0.19, 0.023), (0.10944, 0.22344, 0.023), (0.076, 0.22344, 0.023), (0.038, 0.114, 0.023), (0.07144, 0.114, 0.023), (0.07144, 0.14744, 0.023), (0.038, 0.14744, 0.023), (0.038, 0.19, 0.023), (0.07144, 0.19, 0.023), (0.07144, 0.22344, 0.023), (0.038, 0.22344, 0.023), (0, 0.114, 0.023), (0.03344, 0.114, 0.023), (0.03344, 0.14744, 0.023), (0, 0.14744, 0.023), (0, 0.152, 0.023), (0.03344, 0.152, 0.023), (0.03344, 0.18544, 0.023), (0, 0.18544, 0.023), (0, 0.19, 0.023), (0.03344, 0.19, 0.023), (0.03344, 0.22344, 0.023), (0, 0.22344, 0.023), (-0.038, 0.19, 0.023), (-0.00456, 0.19, 0.023), (-0.00456, 0.22344, 0.023), (-0.038, 0.22344, 0.023), (-0.076, 0.19, 0.023), (-0.04256, 0.19, 0.023), (-0.04256, 0.22344, 0.023), (-0.076, 0.22344, 0.023)]
+                color3f[] primvars:displayColor = [(0.015, 0.02, 0.025)]
+                uniform token subdivisionScheme = "none"
+            }
+        }
+
+        def Xform "S05" (
+            customData = {
+                string splice_id = "S05"
+            }
+        )
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-2.3054866776461598, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Marker"
+            {
+                color3f[] primvars:displayColor = [(0.15, 0.85, 0.5)]
+                double size = 1
+                float3 xformOp:scale = (0.32, 1.02, 0.025)
+                double3 xformOp:translate = (0, 0, 0.006)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Cube "ActiveHighlight"
+            {
+                color3f[] primvars:displayColor = [(1, 0.92, 0.24)]
+                double size = 1
+                token visibility = "invisible"
+                float3 xformOp:scale = (0.42, 1.02, 0.005)
+                double3 xformOp:translate = (0, 0, 0.022)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+
+            def Mesh "Label"
+            {
+                uniform bool doubleSided = 1
+                int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+                int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135]
+                point3f[] points = [(0.076, -0.19, 0.023), (0.10944, -0.19, 0.023), (0.10944, -0.15656, 0.023), (0.076, -0.15656, 0.023), (0.076, -0.152, 0.023), (0.10944, -0.152, 0.023), (0.10944, -0.11856, 0.023), (0.076, -0.11856, 0.023), (0.076, -0.114, 0.023), (0.10944, -0.114, 0.023), (0.10944, -0.08056, 0.023), (0.076, -0.08056, 0.023), (0.038, -0.19, 0.023), (0.07144, -0.19, 0.023), (0.07144, -0.15656, 0.023), (0.038, -0.15656, 0.023), (0, -0.19, 0.023), (0.03344, -0.19, 0.023), (0.03344, -0.15656, 0.023), (0, -0.15656, 0.023), (0, -0.152, 0.023), (0.03344, -0.152, 0.023), (0.03344, -0.11856, 0.023), (0, -0.11856, 0.023), (0, -0.114, 0.023), (0.03344, -0.114, 0.023), (0.03344, -0.08056, 0.023), (0, -0.08056, 0.023), (-0.038, -0.114, 0.023), (-0.00456, -0.114, 0.023), (-0.00456, -0.08056, 0.023), (-0.038, -0.08056, 0.023), (-0.076, -0.19, 0.023), (-0.04256, -0.19, 0.023), (-0.04256, -0.15656, 0.023), (-0.076, -0.15656, 0.023), (-0.076, -0.152, 0.023), (-0.04256, -0.152, 0.023), (-0.04256, -0.11856, 0.023), (-0.076, -0.11856, 0.023), (-0.076, -0.114, 0.023), (-0.04256, -0.114, 0.023), (-0.04256, -0.08056, 0.023), (-0.076, -0.08056, 0.023), (0.076, -0.038, 0.023), (0.10944, -0.038, 0.023), (0.10944, -0.00456, 0.023), (0.076, -0.00456, 0.023), (0.076, 0, 0.023), (0.10944, 0, 0.023), (0.10944, 0.03344, 0.023), (0.076, 0.03344, 0.023), (0.076, 0.038, 0.023), (0.10944, 0.038, 0.023), (0.10944, 0.07144, 0.023), (0.076, 0.07144, 0.023), (0.038, -0.038, 0.023), (0.07144, -0.038, 0.023), (0.07144, -0.00456, 0.023), (0.038, -0.00456, 0.023), (0.038, 0.038, 0.023), (0.07144, 0.038, 0.023), (0.07144, 0.07144, 0.023), (0.038, 0.07144, 0.023), (0, -0.038, 0.023), (0.03344, -0.038, 0.023), (0.03344, -0.00456, 0.023), (0, -0.00456, 0.023), (0, 0.038, 0.023), (0.03344, 0.038, 0.023), (0.03344, 0.07144, 0.023), (0, 0.07144, 0.023), (-0.038, -0.038, 0.023), (-0.00456, -0.038, 0.023), (-0.00456, -0.00456, 0.023), (-0.038, -0.00456, 0.023), (-0.038, 0.038, 0.023), (-0.00456, 0.038, 0.023), (-0.00456, 0.07144, 0.023), (-0.038, 0.07144, 0.023), (-0.076, -0.038, 0.023), (-0.04256, -0.038, 0.023), (-0.04256, -0.00456, 0.023), (-0.076, -0.00456, 0.023), (-0.076, 0, 0.023), (-0.04256, 0, 0.023), (-0.04256, 0.03344, 0.023), (-0.076, 0.03344, 0.023), (-0.076, 0.038, 0.023), (-0.04256, 0.038, 0.023), (-0.04256, 0.07144, 0.023), (-0.076, 0.07144, 0.023), (0.076, 0.114, 0.023), (0.10944, 0.114, 0.023), (0.10944, 0.14744, 0.023), (0.076, 0.14744, 0.023), (0.076, 0.152, 0.023), (0.10944, 0.152, 0.023), (0.10944, 0.18544, 0.023), (0.076, 0.18544, 0.023), (0.076, 0.19, 0.023), (0.10944, 0.19, 0.023), (0.10944, 0.22344, 0.023), (0.076, 0.22344, 0.023), (0.038, 0.114, 0.023), (0.07144, 0.114, 0.023), (0.07144, 0.14744, 0.023), (0.038, 0.14744, 0.023), (0, 0.114, 0.023), (0.03344, 0.114, 0.023), (0.03344, 0.14744, 0.023), (0, 0.14744, 0.023), (0, 0.152, 0.023), (0.03344, 0.152, 0.023), (0.03344, 0.18544, 0.023), (0, 0.18544, 0.023), (0, 0.19, 0.023), (0.03344, 0.19, 0.023), (0.03344, 0.22344, 0.023), (0, 0.22344, 0.023), (-0.038, 0.19, 0.023), (-0.00456, 0.19, 0.023), (-0.00456, 0.22344, 0.023), (-0.038, 0.22344, 0.023), (-0.076, 0.114, 0.023), (-0.04256, 0.114, 0.023), (-0.04256, 0.14744, 0.023), (-0.076, 0.14744, 0.023), (-0.076, 0.152, 0.023), (-0.04256, 0.152, 0.023), (-0.04256, 0.18544, 0.023), (-0.076, 0.18544, 0.023), (-0.076, 0.19, 0.023), (-0.04256, 0.19, 0.023), (-0.04256, 0.22344, 0.023), (-0.076, 0.22344, 0.023)]
+                color3f[] primvars:displayColor = [(0.015, 0.02, 0.025)]
+                uniform token subdivisionScheme = "none"
+            }
+        }
+    }
+
+    def "Treads"
+    {
+        def Xform "Tread_00"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-8.7, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_01"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-7.935730091830127, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_02"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-7.171460183660255, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_03"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-6.4071902754903824, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_04"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-5.64292036732051, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_05"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-4.878650459150638, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_06"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-4.114380550980766, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_07"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-3.3501106428108933, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_08"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-2.585840734641021, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_09"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-1.8215708264711488, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_10"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-1.0573009183012765, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_11"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (-0.2930310101314042, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_12"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (0.4712388980384681, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_13"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (1.2355088062083404, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_14"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (1.9997787143782126, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_15"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (2.764048622548085, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_16"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (3.528318530717957, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_17"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (4.2925884388878295, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_18"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (5.056858347057702, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_19"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (5.821128255227574, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_20"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (6.585398163397446, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_21"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (7.349668071567319, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_22"
+        {
+            float xformOp:rotateY = 0
+            double3 xformOp:translate = (8.11393797973719, 0, 1.5)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_23"
+        {
+            float xformOp:rotateY = 34.0352
+            double3 xformOp:translate = (8.867910634483401, 0, 1.4486081632356054)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_24"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (8.700000000000001, 0, 0.8999999999999999)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_25"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (7.935730091830129, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_26"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (7.1714601836602565, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_27"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (6.407190275490384, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_28"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (5.642920367320512, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_29"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (4.878650459150636, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_30"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (4.114380550980767, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_31"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (3.3501106428108987, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_32"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (2.585840734641023, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_33"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (1.821570826471147, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_34"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (1.0573009183012783, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_35"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (0.29303101013140953, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_36"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-0.4712388980384663, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_37"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-1.2355088062083421, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_38"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-1.9997787143782109, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_39"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-2.7640486225480796, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_40"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-3.5283185307179554, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_41"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-4.292588438887831, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_42"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-5.0568583470577, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_43"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-5.821128255227572, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_44"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-6.5853981633974445, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_45"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-7.349668071567319, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_46"
+        {
+            float xformOp:rotateY = 180
+            double3 xformOp:translate = (-8.11393797973719, 0, 0.9)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+
+        def Xform "Tread_47"
+        {
+            float xformOp:rotateY = 214.0352
+            double3 xformOp:translate = (-8.867910634483401, 0, 0.9513918367643945)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateY"]
+
+            def Cube "Stripe"
+            {
+                color3f[] primvars:displayColor = [(0.12, 0.15, 0.16)]
+                double size = 1
+                float3 xformOp:scale = (0.025, 0.93, 0.023)
+                double3 xformOp:translate = (0, 0, 0.003)
+                uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+            }
+        }
+    }
+
+    def "Station"
+    {
+        def Cube "Post_0"
+        {
+            color3f[] primvars:displayColor = [(0.95, 0.52, 0.07)]
+            double size = 1
+            float3 xformOp:scale = (0.15, 0.15, 2.8)
+            double3 xformOp:translate = (5.5, -0.95, 1.4)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_0"
+        {
+            color3f[] primvars:displayColor = [(0.95, 0.52, 0.07)]
+            double size = 1
+            float3 xformOp:scale = (0.5, 0.45, 0.12)
+            double3 xformOp:translate = (5.5, -0.95, 0.06)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Post_1"
+        {
+            color3f[] primvars:displayColor = [(0.95, 0.52, 0.07)]
+            double size = 1
+            float3 xformOp:scale = (0.15, 0.15, 2.8)
+            double3 xformOp:translate = (5.5, 0.95, 1.4)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Foot_1"
+        {
+            color3f[] primvars:displayColor = [(0.95, 0.52, 0.07)]
+            double size = 1
+            float3 xformOp:scale = (0.5, 0.45, 0.12)
+            double3 xformOp:translate = (5.5, 0.95, 0.06)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Crossbar"
+        {
+            color3f[] primvars:displayColor = [(0.95, 0.52, 0.07)]
+            double size = 1
+            float3 xformOp:scale = (0.18, 2.05, 0.16)
+            double3 xformOp:translate = (5.5, 0, 2.8)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "CameraHousing"
+        {
+            color3f[] primvars:displayColor = [(0.17, 0.23, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.35, 0.34, 0.22)
+            double3 xformOp:translate = (4.88, 0, 2.6)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cylinder "Lens"
+        {
+            uniform token axis = "Z"
+            double height = 0.12
+            color3f[] primvars:displayColor = [(0.08, 0.5, 0.75)]
+            double radius = 0.085
+            double3 xformOp:translate = (4.88, 0, 2.45)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Camera "InspectionCamera"
+        {
+            float2 clippingRange = (0.05, 20)
+            float focalLength = 18
+            double3 xformOp:translate = (4.88, 0, 2.4)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cube "MFLHead"
+        {
+            color3f[] primvars:displayColor = [(0.43, 0.23, 0.7)]
+            double size = 1
+            float3 xformOp:scale = (0.38, 0.33, 0.15)
+            double3 xformOp:translate = (5.31, 0, 2.18)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "MFLPole_Left"
+        {
+            color3f[] primvars:displayColor = [(0.57, 0.4, 0.82)]
+            double size = 1
+            float3 xformOp:scale = (0.16, 0.14, 0.38)
+            double3 xformOp:translate = (5.31, -0.2, 1.92)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "MFLPoleTip_Left"
+        {
+            color3f[] primvars:displayColor = [(0.92, 0.62, 0.95)]
+            double size = 1
+            float3 xformOp:scale = (0.19, 0.16, 0.045)
+            double3 xformOp:translate = (5.31, -0.2, 1.715)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "MFLPole_Right"
+        {
+            color3f[] primvars:displayColor = [(0.57, 0.4, 0.82)]
+            double size = 1
+            float3 xformOp:scale = (0.16, 0.14, 0.38)
+            double3 xformOp:translate = (5.31, 0.2, 1.92)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "MFLPoleTip_Right"
+        {
+            color3f[] primvars:displayColor = [(0.92, 0.62, 0.95)]
+            double size = 1
+            float3 xformOp:scale = (0.19, 0.16, 0.045)
+            double3 xformOp:translate = (5.31, 0.2, 1.715)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "LaserHead"
+        {
+            color3f[] primvars:displayColor = [(0.16, 0.43, 0.54)]
+            double size = 1
+            float3 xformOp:scale = (0.25, 0.28, 0.2)
+            double3 xformOp:translate = (5.75, 0, 2.4)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "LaserBeam"
+        {
+            color3f[] primvars:displayColor = [(0.3, 0.04, 0.04)]
+            double size = 1
+            float3 xformOp:scale = (0.018, 0.98, 0.008)
+            double3 xformOp:translate = (5.75, 0, 1.548)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "LaserFlash"
+        {
+            color3f[] primvars:displayColor = [(1, 0.08, 0.14)]
+            double size = 1
+            token visibility = "invisible"
+            float3 xformOp:scale = (0.045, 0.98, 0.008)
+            double3 xformOp:translate = (5.75, 0, 1.553)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "EncoderBracket"
+        {
+            color3f[] primvars:displayColor = [(0.18, 0.25, 0.3)]
+            double size = 1
+            float3 xformOp:scale = (0.11, 0.12, 0.43)
+            double3 xformOp:translate = (6.16, -0.73, 1.73)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cylinder "EncoderWheel"
+        {
+            uniform token axis = "X"
+            double height = 0.09
+            color3f[] primvars:displayColor = [(0.95, 0.68, 0.12)]
+            double radius = 0.16
+            double3 xformOp:translate = (6.16, -0.78, 1.53)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cube "EncoderSpoke"
+        {
+            color3f[] primvars:displayColor = [(0.12, 0.15, 0.18)]
+            double size = 1
+            float3 xformOp:scale = (0.022, 0.015, 0.23)
+            double3 xformOp:translate = (6.16, -0.832, 1.53)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "Plate_CAMERA"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.07, 0.1)]
+            double size = 1
+            float3 xformOp:scale = (0.54, 0.045, 0.16)
+            double3 xformOp:translate = (4.88, -1.055, 2.49)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Mesh "Label_CAMERA"
+        {
+            uniform bool doubleSided = 1
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259]
+            point3f[] points = [(4.726, -1.083, 2.494), (4.73832, -1.083, 2.494), (4.73832, -1.083, 2.50632), (4.726, -1.083, 2.50632), (4.74, -1.083, 2.494), (4.75232, -1.083, 2.494), (4.75232, -1.083, 2.50632), (4.74, -1.083, 2.50632), (4.754, -1.083, 2.494), (4.76632, -1.083, 2.494), (4.76632, -1.083, 2.50632), (4.754, -1.083, 2.50632), (4.726, -1.083, 2.48), (4.73832, -1.083, 2.48), (4.73832, -1.083, 2.49232), (4.726, -1.083, 2.49232), (4.726, -1.083, 2.466), (4.73832, -1.083, 2.466), (4.73832, -1.083, 2.47832), (4.726, -1.083, 2.47832), (4.726, -1.083, 2.452), (4.73832, -1.083, 2.452), (4.73832, -1.083, 2.46432), (4.726, -1.083, 2.46432), (4.726, -1.083, 2.438), (4.73832, -1.083, 2.438), (4.73832, -1.083, 2.45032), (4.726, -1.083, 2.45032), (4.74, -1.083, 2.438), (4.75232, -1.083, 2.438), (4.75232, -1.083, 2.45032), (4.74, -1.083, 2.45032), (4.754, -1.083, 2.438), (4.76632, -1.083, 2.438), (4.76632, -1.083, 2.45032), (4.754, -1.083, 2.45032), (4.782, -1.083, 2.494), (4.79432, -1.083, 2.494), (4.79432, -1.083, 2.50632), (4.782, -1.083, 2.50632), (4.796, -1.083, 2.494), (4.80832, -1.083, 2.494), (4.80832, -1.083, 2.50632), (4.796, -1.083, 2.50632), (4.81, -1.083, 2.494), (4.82232, -1.083, 2.494), (4.82232, -1.083, 2.50632), (4.81, -1.083, 2.50632), (4.782, -1.083, 2.48), (4.79432, -1.083, 2.48), (4.79432, -1.083, 2.49232), (4.782, -1.083, 2.49232), (4.81, -1.083, 2.48), (4.82232, -1.083, 2.48), (4.82232, -1.083, 2.49232), (4.81, -1.083, 2.49232), (4.782, -1.083, 2.466), (4.79432, -1.083, 2.466), (4.79432, -1.083, 2.47832), (4.782, -1.083, 2.47832), (4.796, -1.083, 2.466), (4.80832, -1.083, 2.466), (4.80832, -1.083, 2.47832), (4.796, -1.083, 2.47832), (4.81, -1.083, 2.466), (4.82232, -1.083, 2.466), (4.82232, -1.083, 2.47832), (4.81, -1.083, 2.47832), (4.782, -1.083, 2.452), (4.79432, -1.083, 2.452), (4.79432, -1.083, 2.46432), (4.782, -1.083, 2.46432), (4.81, -1.083, 2.452), (4.82232, -1.083, 2.452), (4.82232, -1.083, 2.46432), (4.81, -1.083, 2.46432), (4.782, -1.083, 2.438), (4.79432, -1.083, 2.438), (4.79432, -1.083, 2.45032), (4.782, -1.083, 2.45032), (4.81, -1.083, 2.438), (4.82232, -1.083, 2.438), (4.82232, -1.083, 2.45032), (4.81, -1.083, 2.45032), (4.838, -1.083, 2.494), (4.85032, -1.083, 2.494), (4.85032, -1.083, 2.50632), (4.838, -1.083, 2.50632), (4.866, -1.083, 2.494), (4.87832, -1.083, 2.494), (4.87832, -1.083, 2.50632), (4.866, -1.083, 2.50632), (4.838, -1.083, 2.48), (4.85032, -1.083, 2.48), (4.85032, -1.083, 2.49232), (4.838, -1.083, 2.49232), (4.852, -1.083, 2.48), (4.86432, -1.083, 2.48), (4.86432, -1.083, 2.49232), (4.852, -1.083, 2.49232), (4.866, -1.083, 2.48), (4.87832, -1.083, 2.48), (4.87832, -1.083, 2.49232), (4.866, -1.083, 2.49232), (4.838, -1.083, 2.466), (4.85032, -1.083, 2.466), (4.85032, -1.083, 2.47832), (4.838, -1.083, 2.47832), (4.852, -1.083, 2.466), (4.86432, -1.083, 2.466), (4.86432, -1.083, 2.47832), (4.852, -1.083, 2.47832), (4.866, -1.083, 2.466), (4.87832, -1.083, 2.466), (4.87832, -1.083, 2.47832), (4.866, -1.083, 2.47832), (4.838, -1.083, 2.452), (4.85032, -1.083, 2.452), (4.85032, -1.083, 2.46432), (4.838, -1.083, 2.46432), (4.866, -1.083, 2.452), (4.87832, -1.083, 2.452), (4.87832, -1.083, 2.46432), (4.866, -1.083, 2.46432), (4.838, -1.083, 2.438), (4.85032, -1.083, 2.438), (4.85032, -1.083, 2.45032), (4.838, -1.083, 2.45032), (4.866, -1.083, 2.438), (4.87832, -1.083, 2.438), (4.87832, -1.083, 2.45032), (4.866, -1.083, 2.45032), (4.894, -1.083, 2.494), (4.90632, -1.083, 2.494), (4.90632, -1.083, 2.50632), (4.894, -1.083, 2.50632), (4.908, -1.083, 2.494), (4.92032, -1.083, 2.494), (4.92032, -1.083, 2.50632), (4.908, -1.083, 2.50632), (4.922, -1.083, 2.494), (4.93432, -1.083, 2.494), (4.93432, -1.083, 2.50632), (4.922, -1.083, 2.50632), (4.894, -1.083, 2.48), (4.90632, -1.083, 2.48), (4.90632, -1.083, 2.49232), (4.894, -1.083, 2.49232), (4.894, -1.083, 2.466), (4.90632, -1.083, 2.466), (4.90632, -1.083, 2.47832), (4.894, -1.083, 2.47832), (4.908, -1.083, 2.466), (4.92032, -1.083, 2.466), (4.92032, -1.083, 2.47832), (4.908, -1.083, 2.47832), (4.894, -1.083, 2.452), (4.90632, -1.083, 2.452), (4.90632, -1.083, 2.46432), (4.894, -1.083, 2.46432), (4.894, -1.083, 2.438), (4.90632, -1.083, 2.438), (4.90632, -1.083, 2.45032), (4.894, -1.083, 2.45032), (4.908, -1.083, 2.438), (4.92032, -1.083, 2.438), (4.92032, -1.083, 2.45032), (4.908, -1.083, 2.45032), (4.922, -1.083, 2.438), (4.93432, -1.083, 2.438), (4.93432, -1.083, 2.45032), (4.922, -1.083, 2.45032), (4.95, -1.083, 2.494), (4.96232, -1.083, 2.494), (4.96232, -1.083, 2.50632), (4.95, -1.083, 2.50632), (4.964, -1.083, 2.494), (4.97632, -1.083, 2.494), (4.97632, -1.083, 2.50632), (4.964, -1.083, 2.50632), (4.95, -1.083, 2.48), (4.96232, -1.083, 2.48), (4.96232, -1.083, 2.49232), (4.95, -1.083, 2.49232), (4.978, -1.083, 2.48), (4.99032, -1.083, 2.48), (4.99032, -1.083, 2.49232), (4.978, -1.083, 2.49232), (4.95, -1.083, 2.466), (4.96232, -1.083, 2.466), (4.96232, -1.083, 2.47832), (4.95, -1.083, 2.47832), (4.964, -1.083, 2.466), (4.97632, -1.083, 2.466), (4.97632, -1.083, 2.47832), (4.964, -1.083, 2.47832), (4.95, -1.083, 2.452), (4.96232, -1.083, 2.452), (4.96232, -1.083, 2.46432), (4.95, -1.083, 2.46432), (4.978, -1.083, 2.452), (4.99032, -1.083, 2.452), (4.99032, -1.083, 2.46432), (4.978, -1.083, 2.46432), (4.95, -1.083, 2.438), (4.96232, -1.083, 2.438), (4.96232, -1.083, 2.45032), (4.95, -1.083, 2.45032), (4.978, -1.083, 2.438), (4.99032, -1.083, 2.438), (4.99032, -1.083, 2.45032), (4.978, -1.083, 2.45032), (5.006, -1.083, 2.494), (5.01832, -1.083, 2.494), (5.01832, -1.083, 2.50632), (5.006, -1.083, 2.50632), (5.02, -1.083, 2.494), (5.03232, -1.083, 2.494), (5.03232, -1.083, 2.50632), (5.02, -1.083, 2.50632), (5.034, -1.083, 2.494), (5.04632, -1.083, 2.494), (5.04632, -1.083, 2.50632), (5.034, -1.083, 2.50632), (5.006, -1.083, 2.48), (5.01832, -1.083, 2.48), (5.01832, -1.083, 2.49232), (5.006, -1.083, 2.49232), (5.034, -1.083, 2.48), (5.04632, -1.083, 2.48), (5.04632, -1.083, 2.49232), (5.034, -1.083, 2.49232), (5.006, -1.083, 2.466), (5.01832, -1.083, 2.466), (5.01832, -1.083, 2.47832), (5.006, -1.083, 2.47832), (5.02, -1.083, 2.466), (5.03232, -1.083, 2.466), (5.03232, -1.083, 2.47832), (5.02, -1.083, 2.47832), (5.034, -1.083, 2.466), (5.04632, -1.083, 2.466), (5.04632, -1.083, 2.47832), (5.034, -1.083, 2.47832), (5.006, -1.083, 2.452), (5.01832, -1.083, 2.452), (5.01832, -1.083, 2.46432), (5.006, -1.083, 2.46432), (5.034, -1.083, 2.452), (5.04632, -1.083, 2.452), (5.04632, -1.083, 2.46432), (5.034, -1.083, 2.46432), (5.006, -1.083, 2.438), (5.01832, -1.083, 2.438), (5.01832, -1.083, 2.45032), (5.006, -1.083, 2.45032), (5.034, -1.083, 2.438), (5.04632, -1.083, 2.438), (5.04632, -1.083, 2.45032), (5.034, -1.083, 2.45032)]
+            color3f[] primvars:displayColor = [(0.93, 0.96, 1)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Cube "Plate_MFL"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.07, 0.1)]
+            double size = 1
+            float3 xformOp:scale = (0.54, 0.045, 0.16)
+            double3 xformOp:translate = (5.31, -1.055, 2.18)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Mesh "Label_MFL"
+        {
+            uniform bool doubleSided = 1
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107]
+            point3f[] points = [(5.24, -1.083, 2.184), (5.25232, -1.083, 2.184), (5.25232, -1.083, 2.19632), (5.24, -1.083, 2.19632), (5.268, -1.083, 2.184), (5.28032, -1.083, 2.184), (5.28032, -1.083, 2.19632), (5.268, -1.083, 2.19632), (5.24, -1.083, 2.17), (5.25232, -1.083, 2.17), (5.25232, -1.083, 2.18232), (5.24, -1.083, 2.18232), (5.254, -1.083, 2.17), (5.26632, -1.083, 2.17), (5.26632, -1.083, 2.18232), (5.254, -1.083, 2.18232), (5.268, -1.083, 2.17), (5.28032, -1.083, 2.17), (5.28032, -1.083, 2.18232), (5.268, -1.083, 2.18232), (5.24, -1.083, 2.156), (5.25232, -1.083, 2.156), (5.25232, -1.083, 2.16832), (5.24, -1.083, 2.16832), (5.254, -1.083, 2.156), (5.26632, -1.083, 2.156), (5.26632, -1.083, 2.16832), (5.254, -1.083, 2.16832), (5.268, -1.083, 2.156), (5.28032, -1.083, 2.156), (5.28032, -1.083, 2.16832), (5.268, -1.083, 2.16832), (5.24, -1.083, 2.142), (5.25232, -1.083, 2.142), (5.25232, -1.083, 2.15432), (5.24, -1.083, 2.15432), (5.268, -1.083, 2.142), (5.28032, -1.083, 2.142), (5.28032, -1.083, 2.15432), (5.268, -1.083, 2.15432), (5.24, -1.083, 2.128), (5.25232, -1.083, 2.128), (5.25232, -1.083, 2.14032), (5.24, -1.083, 2.14032), (5.268, -1.083, 2.128), (5.28032, -1.083, 2.128), (5.28032, -1.083, 2.14032), (5.268, -1.083, 2.14032), (5.296, -1.083, 2.184), (5.30832, -1.083, 2.184), (5.30832, -1.083, 2.19632), (5.296, -1.083, 2.19632), (5.31, -1.083, 2.184), (5.32232, -1.083, 2.184), (5.32232, -1.083, 2.19632), (5.31, -1.083, 2.19632), (5.324, -1.083, 2.184), (5.33632, -1.083, 2.184), (5.33632, -1.083, 2.19632), (5.324, -1.083, 2.19632), (5.296, -1.083, 2.17), (5.30832, -1.083, 2.17), (5.30832, -1.083, 2.18232), (5.296, -1.083, 2.18232), (5.296, -1.083, 2.156), (5.30832, -1.083, 2.156), (5.30832, -1.083, 2.16832), (5.296, -1.083, 2.16832), (5.31, -1.083, 2.156), (5.32232, -1.083, 2.156), (5.32232, -1.083, 2.16832), (5.31, -1.083, 2.16832), (5.296, -1.083, 2.142), (5.30832, -1.083, 2.142), (5.30832, -1.083, 2.15432), (5.296, -1.083, 2.15432), (5.296, -1.083, 2.128), (5.30832, -1.083, 2.128), (5.30832, -1.083, 2.14032), (5.296, -1.083, 2.14032), (5.352, -1.083, 2.184), (5.36432, -1.083, 2.184), (5.36432, -1.083, 2.19632), (5.352, -1.083, 2.19632), (5.352, -1.083, 2.17), (5.36432, -1.083, 2.17), (5.36432, -1.083, 2.18232), (5.352, -1.083, 2.18232), (5.352, -1.083, 2.156), (5.36432, -1.083, 2.156), (5.36432, -1.083, 2.16832), (5.352, -1.083, 2.16832), (5.352, -1.083, 2.142), (5.36432, -1.083, 2.142), (5.36432, -1.083, 2.15432), (5.352, -1.083, 2.15432), (5.352, -1.083, 2.128), (5.36432, -1.083, 2.128), (5.36432, -1.083, 2.14032), (5.352, -1.083, 2.14032), (5.366, -1.083, 2.128), (5.37832, -1.083, 2.128), (5.37832, -1.083, 2.14032), (5.366, -1.083, 2.14032), (5.38, -1.083, 2.128), (5.39232, -1.083, 2.128), (5.39232, -1.083, 2.14032), (5.38, -1.083, 2.14032)]
+            color3f[] primvars:displayColor = [(0.93, 0.96, 1)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Cube "Plate_LASER"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.07, 0.1)]
+            double size = 1
+            float3 xformOp:scale = (0.54, 0.045, 0.16)
+            double3 xformOp:translate = (5.75, -1.055, 2.4)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Mesh "Label_LASER"
+        {
+            uniform bool doubleSided = 1
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199]
+            point3f[] points = [(5.624, -1.083, 2.404), (5.63632, -1.083, 2.404), (5.63632, -1.083, 2.41632), (5.624, -1.083, 2.41632), (5.624, -1.083, 2.39), (5.63632, -1.083, 2.39), (5.63632, -1.083, 2.40232), (5.624, -1.083, 2.40232), (5.624, -1.083, 2.376), (5.63632, -1.083, 2.376), (5.63632, -1.083, 2.38832), (5.624, -1.083, 2.38832), (5.624, -1.083, 2.362), (5.63632, -1.083, 2.362), (5.63632, -1.083, 2.37432), (5.624, -1.083, 2.37432), (5.624, -1.083, 2.348), (5.63632, -1.083, 2.348), (5.63632, -1.083, 2.36032), (5.624, -1.083, 2.36032), (5.638, -1.083, 2.348), (5.65032, -1.083, 2.348), (5.65032, -1.083, 2.36032), (5.638, -1.083, 2.36032), (5.652, -1.083, 2.348), (5.66432, -1.083, 2.348), (5.66432, -1.083, 2.36032), (5.652, -1.083, 2.36032), (5.68, -1.083, 2.404), (5.69232, -1.083, 2.404), (5.69232, -1.083, 2.41632), (5.68, -1.083, 2.41632), (5.694, -1.083, 2.404), (5.70632, -1.083, 2.404), (5.70632, -1.083, 2.41632), (5.694, -1.083, 2.41632), (5.708, -1.083, 2.404), (5.72032, -1.083, 2.404), (5.72032, -1.083, 2.41632), (5.708, -1.083, 2.41632), (5.68, -1.083, 2.39), (5.69232, -1.083, 2.39), (5.69232, -1.083, 2.40232), (5.68, -1.083, 2.40232), (5.708, -1.083, 2.39), (5.72032, -1.083, 2.39), (5.72032, -1.083, 2.40232), (5.708, -1.083, 2.40232), (5.68, -1.083, 2.376), (5.69232, -1.083, 2.376), (5.69232, -1.083, 2.38832), (5.68, -1.083, 2.38832), (5.694, -1.083, 2.376), (5.70632, -1.083, 2.376), (5.70632, -1.083, 2.38832), (5.694, -1.083, 2.38832), (5.708, -1.083, 2.376), (5.72032, -1.083, 2.376), (5.72032, -1.083, 2.38832), (5.708, -1.083, 2.38832), (5.68, -1.083, 2.362), (5.69232, -1.083, 2.362), (5.69232, -1.083, 2.37432), (5.68, -1.083, 2.37432), (5.708, -1.083, 2.362), (5.72032, -1.083, 2.362), (5.72032, -1.083, 2.37432), (5.708, -1.083, 2.37432), (5.68, -1.083, 2.348), (5.69232, -1.083, 2.348), (5.69232, -1.083, 2.36032), (5.68, -1.083, 2.36032), (5.708, -1.083, 2.348), (5.72032, -1.083, 2.348), (5.72032, -1.083, 2.36032), (5.708, -1.083, 2.36032), (5.736, -1.083, 2.404), (5.74832, -1.083, 2.404), (5.74832, -1.083, 2.41632), (5.736, -1.083, 2.41632), (5.75, -1.083, 2.404), (5.76232, -1.083, 2.404), (5.76232, -1.083, 2.41632), (5.75, -1.083, 2.41632), (5.764, -1.083, 2.404), (5.77632, -1.083, 2.404), (5.77632, -1.083, 2.41632), (5.764, -1.083, 2.41632), (5.736, -1.083, 2.39), (5.74832, -1.083, 2.39), (5.74832, -1.083, 2.40232), (5.736, -1.083, 2.40232), (5.736, -1.083, 2.376), (5.74832, -1.083, 2.376), (5.74832, -1.083, 2.38832), (5.736, -1.083, 2.38832), (5.75, -1.083, 2.376), (5.76232, -1.083, 2.376), (5.76232, -1.083, 2.38832), (5.75, -1.083, 2.38832), (5.764, -1.083, 2.376), (5.77632, -1.083, 2.376), (5.77632, -1.083, 2.38832), (5.764, -1.083, 2.38832), (5.764, -1.083, 2.362), (5.77632, -1.083, 2.362), (5.77632, -1.083, 2.37432), (5.764, -1.083, 2.37432), (5.736, -1.083, 2.348), (5.74832, -1.083, 2.348), (5.74832, -1.083, 2.36032), (5.736, -1.083, 2.36032), (5.75, -1.083, 2.348), (5.76232, -1.083, 2.348), (5.76232, -1.083, 2.36032), (5.75, -1.083, 2.36032), (5.764, -1.083, 2.348), (5.77632, -1.083, 2.348), (5.77632, -1.083, 2.36032), (5.764, -1.083, 2.36032), (5.792, -1.083, 2.404), (5.80432, -1.083, 2.404), (5.80432, -1.083, 2.41632), (5.792, -1.083, 2.41632), (5.806, -1.083, 2.404), (5.81832, -1.083, 2.404), (5.81832, -1.083, 2.41632), (5.806, -1.083, 2.41632), (5.82, -1.083, 2.404), (5.83232, -1.083, 2.404), (5.83232, -1.083, 2.41632), (5.82, -1.083, 2.41632), (5.792, -1.083, 2.39), (5.80432, -1.083, 2.39), (5.80432, -1.083, 2.40232), (5.792, -1.083, 2.40232), (5.792, -1.083, 2.376), (5.80432, -1.083, 2.376), (5.80432, -1.083, 2.38832), (5.792, -1.083, 2.38832), (5.806, -1.083, 2.376), (5.81832, -1.083, 2.376), (5.81832, -1.083, 2.38832), (5.806, -1.083, 2.38832), (5.792, -1.083, 2.362), (5.80432, -1.083, 2.362), (5.80432, -1.083, 2.37432), (5.792, -1.083, 2.37432), (5.792, -1.083, 2.348), (5.80432, -1.083, 2.348), (5.80432, -1.083, 2.36032), (5.792, -1.083, 2.36032), (5.806, -1.083, 2.348), (5.81832, -1.083, 2.348), (5.81832, -1.083, 2.36032), (5.806, -1.083, 2.36032), (5.82, -1.083, 2.348), (5.83232, -1.083, 2.348), (5.83232, -1.083, 2.36032), (5.82, -1.083, 2.36032), (5.848, -1.083, 2.404), (5.86032, -1.083, 2.404), (5.86032, -1.083, 2.41632), (5.848, -1.083, 2.41632), (5.862, -1.083, 2.404), (5.87432, -1.083, 2.404), (5.87432, -1.083, 2.41632), (5.862, -1.083, 2.41632), (5.848, -1.083, 2.39), (5.86032, -1.083, 2.39), (5.86032, -1.083, 2.40232), (5.848, -1.083, 2.40232), (5.876, -1.083, 2.39), (5.88832, -1.083, 2.39), (5.88832, -1.083, 2.40232), (5.876, -1.083, 2.40232), (5.848, -1.083, 2.376), (5.86032, -1.083, 2.376), (5.86032, -1.083, 2.38832), (5.848, -1.083, 2.38832), (5.862, -1.083, 2.376), (5.87432, -1.083, 2.376), (5.87432, -1.083, 2.38832), (5.862, -1.083, 2.38832), (5.848, -1.083, 2.362), (5.86032, -1.083, 2.362), (5.86032, -1.083, 2.37432), (5.848, -1.083, 2.37432), (5.876, -1.083, 2.362), (5.88832, -1.083, 2.362), (5.88832, -1.083, 2.37432), (5.876, -1.083, 2.37432), (5.848, -1.083, 2.348), (5.86032, -1.083, 2.348), (5.86032, -1.083, 2.36032), (5.848, -1.083, 2.36032), (5.876, -1.083, 2.348), (5.88832, -1.083, 2.348), (5.88832, -1.083, 2.36032), (5.876, -1.083, 2.36032)]
+            color3f[] primvars:displayColor = [(0.93, 0.96, 1)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Cube "Plate_ENCODER"
+        {
+            color3f[] primvars:displayColor = [(0.045, 0.07, 0.1)]
+            double size = 1
+            float3 xformOp:scale = (0.54, 0.045, 0.16)
+            double3 xformOp:translate = (6.16, -1.055, 1.56)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Mesh "Label_ENCODER"
+        {
+            uniform bool doubleSided = 1
+            int[] faceVertexCounts = [4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+            int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 265, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 276, 277, 278, 279, 280, 281, 282, 283, 284, 285, 286, 287, 288, 289, 290, 291, 292, 293, 294, 295]
+            point3f[] points = [(5.978, -1.083, 1.564), (5.99032, -1.083, 1.564), (5.99032, -1.083, 1.57632), (5.978, -1.083, 1.57632), (5.992, -1.083, 1.564), (6.00432, -1.083, 1.564), (6.00432, -1.083, 1.57632), (5.992, -1.083, 1.57632), (6.006, -1.083, 1.564), (6.01832, -1.083, 1.564), (6.01832, -1.083, 1.57632), (6.006, -1.083, 1.57632), (5.978, -1.083, 1.55), (5.99032, -1.083, 1.55), (5.99032, -1.083, 1.56232), (5.978, -1.083, 1.56232), (5.978, -1.083, 1.536), (5.99032, -1.083, 1.536), (5.99032, -1.083, 1.54832), (5.978, -1.083, 1.54832), (5.992, -1.083, 1.536), (6.00432, -1.083, 1.536), (6.00432, -1.083, 1.54832), (5.992, -1.083, 1.54832), (5.978, -1.083, 1.522), (5.99032, -1.083, 1.522), (5.99032, -1.083, 1.53432), (5.978, -1.083, 1.53432), (5.978, -1.083, 1.508), (5.99032, -1.083, 1.508), (5.99032, -1.083, 1.52032), (5.978, -1.083, 1.52032), (5.992, -1.083, 1.508), (6.00432, -1.083, 1.508), (6.00432, -1.083, 1.52032), (5.992, -1.083, 1.52032), (6.006, -1.083, 1.508), (6.01832, -1.083, 1.508), (6.01832, -1.083, 1.52032), (6.006, -1.083, 1.52032), (6.034, -1.083, 1.564), (6.04632, -1.083, 1.564), (6.04632, -1.083, 1.57632), (6.034, -1.083, 1.57632), (6.062, -1.083, 1.564), (6.07432, -1.083, 1.564), (6.07432, -1.083, 1.57632), (6.062, -1.083, 1.57632), (6.034, -1.083, 1.55), (6.04632, -1.083, 1.55), (6.04632, -1.083, 1.56232), (6.034, -1.083, 1.56232), (6.048, -1.083, 1.55), (6.06032, -1.083, 1.55), (6.06032, -1.083, 1.56232), (6.048, -1.083, 1.56232), (6.062, -1.083, 1.55), (6.07432, -1.083, 1.55), (6.07432, -1.083, 1.56232), (6.062, -1.083, 1.56232), (6.034, -1.083, 1.536), (6.04632, -1.083, 1.536), (6.04632, -1.083, 1.54832), (6.034, -1.083, 1.54832), (6.048, -1.083, 1.536), (6.06032, -1.083, 1.536), (6.06032, -1.083, 1.54832), (6.048, -1.083, 1.54832), (6.062, -1.083, 1.536), (6.07432, -1.083, 1.536), (6.07432, -1.083, 1.54832), (6.062, -1.083, 1.54832), (6.034, -1.083, 1.522), (6.04632, -1.083, 1.522), (6.04632, -1.083, 1.53432), (6.034, -1.083, 1.53432), (6.048, -1.083, 1.522), (6.06032, -1.083, 1.522), (6.06032, -1.083, 1.53432), (6.048, -1.083, 1.53432), (6.062, -1.083, 1.522), (6.07432, -1.083, 1.522), (6.07432, -1.083, 1.53432), (6.062, -1.083, 1.53432), (6.034, -1.083, 1.508), (6.04632, -1.083, 1.508), (6.04632, -1.083, 1.52032), (6.034, -1.083, 1.52032), (6.062, -1.083, 1.508), (6.07432, -1.083, 1.508), (6.07432, -1.083, 1.52032), (6.062, -1.083, 1.52032), (6.09, -1.083, 1.564), (6.10232, -1.083, 1.564), (6.10232, -1.083, 1.57632), (6.09, -1.083, 1.57632), (6.104, -1.083, 1.564), (6.11632, -1.083, 1.564), (6.11632, -1.083, 1.57632), (6.104, -1.083, 1.57632), (6.118, -1.083, 1.564), (6.13032, -1.083, 1.564), (6.13032, -1.083, 1.57632), (6.118, -1.083, 1.57632), (6.09, -1.083, 1.55), (6.10232, -1.083, 1.55), (6.10232, -1.083, 1.56232), (6.09, -1.083, 1.56232), (6.09, -1.083, 1.536), (6.10232, -1.083, 1.536), (6.10232, -1.083, 1.54832), (6.09, -1.083, 1.54832), (6.09, -1.083, 1.522), (6.10232, -1.083, 1.522), (6.10232, -1.083, 1.53432), (6.09, -1.083, 1.53432), (6.09, -1.083, 1.508), (6.10232, -1.083, 1.508), (6.10232, -1.083, 1.52032), (6.09, -1.083, 1.52032), (6.104, -1.083, 1.508), (6.11632, -1.083, 1.508), (6.11632, -1.083, 1.52032), (6.104, -1.083, 1.52032), (6.118, -1.083, 1.508), (6.13032, -1.083, 1.508), (6.13032, -1.083, 1.52032), (6.118, -1.083, 1.52032), (6.146, -1.083, 1.564), (6.15832, -1.083, 1.564), (6.15832, -1.083, 1.57632), (6.146, -1.083, 1.57632), (6.16, -1.083, 1.564), (6.17232, -1.083, 1.564), (6.17232, -1.083, 1.57632), (6.16, -1.083, 1.57632), (6.174, -1.083, 1.564), (6.18632, -1.083, 1.564), (6.18632, -1.083, 1.57632), (6.174, -1.083, 1.57632), (6.146, -1.083, 1.55), (6.15832, -1.083, 1.55), (6.15832, -1.083, 1.56232), (6.146, -1.083, 1.56232), (6.174, -1.083, 1.55), (6.18632, -1.083, 1.55), (6.18632, -1.083, 1.56232), (6.174, -1.083, 1.56232), (6.146, -1.083, 1.536), (6.15832, -1.083, 1.536), (6.15832, -1.083, 1.54832), (6.146, -1.083, 1.54832), (6.174, -1.083, 1.536), (6.18632, -1.083, 1.536), (6.18632, -1.083, 1.54832), (6.174, -1.083, 1.54832), (6.146, -1.083, 1.522), (6.15832, -1.083, 1.522), (6.15832, -1.083, 1.53432), (6.146, -1.083, 1.53432), (6.174, -1.083, 1.522), (6.18632, -1.083, 1.522), (6.18632, -1.083, 1.53432), (6.174, -1.083, 1.53432), (6.146, -1.083, 1.508), (6.15832, -1.083, 1.508), (6.15832, -1.083, 1.52032), (6.146, -1.083, 1.52032), (6.16, -1.083, 1.508), (6.17232, -1.083, 1.508), (6.17232, -1.083, 1.52032), (6.16, -1.083, 1.52032), (6.174, -1.083, 1.508), (6.18632, -1.083, 1.508), (6.18632, -1.083, 1.52032), (6.174, -1.083, 1.52032), (6.202, -1.083, 1.564), (6.21432, -1.083, 1.564), (6.21432, -1.083, 1.57632), (6.202, -1.083, 1.57632), (6.216, -1.083, 1.564), (6.22832, -1.083, 1.564), (6.22832, -1.083, 1.57632), (6.216, -1.083, 1.57632), (6.202, -1.083, 1.55), (6.21432, -1.083, 1.55), (6.21432, -1.083, 1.56232), (6.202, -1.083, 1.56232), (6.23, -1.083, 1.55), (6.24232, -1.083, 1.55), (6.24232, -1.083, 1.56232), (6.23, -1.083, 1.56232), (6.202, -1.083, 1.536), (6.21432, -1.083, 1.536), (6.21432, -1.083, 1.54832), (6.202, -1.083, 1.54832), (6.23, -1.083, 1.536), (6.24232, -1.083, 1.536), (6.24232, -1.083, 1.54832), (6.23, -1.083, 1.54832), (6.202, -1.083, 1.522), (6.21432, -1.083, 1.522), (6.21432, -1.083, 1.53432), (6.202, -1.083, 1.53432), (6.23, -1.083, 1.522), (6.24232, -1.083, 1.522), (6.24232, -1.083, 1.53432), (6.23, -1.083, 1.53432), (6.202, -1.083, 1.508), (6.21432, -1.083, 1.508), (6.21432, -1.083, 1.52032), (6.202, -1.083, 1.52032), (6.216, -1.083, 1.508), (6.22832, -1.083, 1.508), (6.22832, -1.083, 1.52032), (6.216, -1.083, 1.52032), (6.258, -1.083, 1.564), (6.27032, -1.083, 1.564), (6.27032, -1.083, 1.57632), (6.258, -1.083, 1.57632), (6.272, -1.083, 1.564), (6.28432, -1.083, 1.564), (6.28432, -1.083, 1.57632), (6.272, -1.083, 1.57632), (6.286, -1.083, 1.564), (6.29832, -1.083, 1.564), (6.29832, -1.083, 1.57632), (6.286, -1.083, 1.57632), (6.258, -1.083, 1.55), (6.27032, -1.083, 1.55), (6.27032, -1.083, 1.56232), (6.258, -1.083, 1.56232), (6.258, -1.083, 1.536), (6.27032, -1.083, 1.536), (6.27032, -1.083, 1.54832), (6.258, -1.083, 1.54832), (6.272, -1.083, 1.536), (6.28432, -1.083, 1.536), (6.28432, -1.083, 1.54832), (6.272, -1.083, 1.54832), (6.258, -1.083, 1.522), (6.27032, -1.083, 1.522), (6.27032, -1.083, 1.53432), (6.258, -1.083, 1.53432), (6.258, -1.083, 1.508), (6.27032, -1.083, 1.508), (6.27032, -1.083, 1.52032), (6.258, -1.083, 1.52032), (6.272, -1.083, 1.508), (6.28432, -1.083, 1.508), (6.28432, -1.083, 1.52032), (6.272, -1.083, 1.52032), (6.286, -1.083, 1.508), (6.29832, -1.083, 1.508), (6.29832, -1.083, 1.52032), (6.286, -1.083, 1.52032), (6.314, -1.083, 1.564), (6.32632, -1.083, 1.564), (6.32632, -1.083, 1.57632), (6.314, -1.083, 1.57632), (6.328, -1.083, 1.564), (6.34032, -1.083, 1.564), (6.34032, -1.083, 1.57632), (6.328, -1.083, 1.57632), (6.314, -1.083, 1.55), (6.32632, -1.083, 1.55), (6.32632, -1.083, 1.56232), (6.314, -1.083, 1.56232), (6.342, -1.083, 1.55), (6.35432, -1.083, 1.55), (6.35432, -1.083, 1.56232), (6.342, -1.083, 1.56232), (6.314, -1.083, 1.536), (6.32632, -1.083, 1.536), (6.32632, -1.083, 1.54832), (6.314, -1.083, 1.54832), (6.328, -1.083, 1.536), (6.34032, -1.083, 1.536), (6.34032, -1.083, 1.54832), (6.328, -1.083, 1.54832), (6.314, -1.083, 1.522), (6.32632, -1.083, 1.522), (6.32632, -1.083, 1.53432), (6.314, -1.083, 1.53432), (6.342, -1.083, 1.522), (6.35432, -1.083, 1.522), (6.35432, -1.083, 1.53432), (6.342, -1.083, 1.53432), (6.314, -1.083, 1.508), (6.32632, -1.083, 1.508), (6.32632, -1.083, 1.52032), (6.314, -1.083, 1.52032), (6.342, -1.083, 1.508), (6.35432, -1.083, 1.508), (6.35432, -1.083, 1.52032), (6.342, -1.083, 1.52032)]
+            color3f[] primvars:displayColor = [(0.93, 0.96, 1)]
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Cube "DetectionLine"
+        {
+            color3f[] primvars:displayColor = [(0.15, 0.95, 0.45)]
+            double size = 1
+            float3 xformOp:scale = (0.055, 1.04, 0.006)
+            double3 xformOp:translate = (5.5, 0, 1.527)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+
+        def Cube "ScanFlash"
+        {
+            color3f[] primvars:displayColor = [(1, 0.86, 0.15)]
+            double size = 1
+            token visibility = "invisible"
+            float3 xformOp:scale = (0.15, 1.04, 0.012)
+            double3 xformOp:translate = (5.5, 0, 1.535)
+            uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:scale"]
+        }
+    }
+
+    def Camera "Overview"
+    {
+        float focalLength = 28
+        matrix4d xformOp:transform = ( (0.845488903030971, 0.5339929913879816, -2.7755575615628914e-17, 0), (-0.2689290059399091, 0.4258042594048561, 0.8639258778603951, -0), (0.4613303638561605, -0.7304397427722543, 0.5036189805429753, 0), (12, -19, 14, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+data/runtime/
+data/*.log
+screenshots/*.png
+*.lock
+*.tmp
+data/test-checkout-*/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+.venv/
+.vscode/
+/*.png

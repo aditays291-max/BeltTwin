@@ -1,0 +1,26 @@
+[package]
+title = "BeltTwin Phase 1"
+version = "0.1.0"
+
+[dependencies]
+"omni.usd" = {}
+"omni.kit.usd.layers" = {}
+"omni.kit.mainwindow" = {}
+"omni.kit.viewport.window" = {}
+"omni.kit.viewport.utility" = {}
+"omni.kit.manipulator.camera" = {}
+"omni.hydra.rtx" = {}
+"omni.hydra.rtx.shadercache.vulkan" = {}
+"omni.rtx.shadercache.vulkan" = {}
+
+[settings]
+app.settings.persistent = false
+app.window.title = "BeltTwin | Phase 1"
+app.vulkan = true
+app.exts.registryEnabled = false
+app.exts.registryExtensionDownloading = false
+app.extensions.generateVersionLock = false
+app.runLoops.main.rateLimitEnabled = true
+app.runLoops.main.rateLimitFrequency = 30
+renderer.multiGpu.enabled = false
+app.audio.enabled = false
